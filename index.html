@@ -1,0 +1,25 @@
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>First AngularJS site</title>
+    <meta name="Description" content="First AEM Site" />
+    <script src="/js/jquery-1.11.2.min.js"></script>
+    <script src="/js/angular.js"></script>
+    <script src="/js/app/modules/testApp.js"></script>
+    <script src="/js/app/controllers/testAppCtrl.js"></script>
+</head>
+
+<body ng-app="testApp">
+    <div ng-controller="testAppCtrl">
+
+        <div ng-repeat="entry in arr">
+            <span>{{entry.name}}</span>,
+            <span>{{entry.surname}}</span>
+        </div>
+
+
+
+
+    </div>
+</body>
+</html>

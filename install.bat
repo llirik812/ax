@@ -1,0 +1,1 @@
+@echo bower, karma, karma-chrome-launcher, karma-jasmine, karma-phantomjs-launcher, phantomjs

@@ -1,0 +1,1 @@
+node node_modules/karma/bin/karma start tests/karma.conf.js
