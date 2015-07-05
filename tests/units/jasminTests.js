@@ -12,7 +12,8 @@ describe("testing describe: ", function(){
     var b,
         c = null,
         d = 12,
-        regexpMatch = 'kirill';
+        regexpMatch = 'kirill',
+        e = {};
 
     it("expects ...", function(){
         expect(b).toBe(undefined);
@@ -20,5 +21,6 @@ describe("testing describe: ", function(){
         expect(d).toEqual(12);
         expect(d).not.toEqual(11);
         expect(regexpMatch).toMatch(/^kir.*$/);
+        expect(e.d).not.toBeDefined();
     });
 });
