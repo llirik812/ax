@@ -101,3 +101,42 @@ xdescribe("This is xdescribe example", function(){
         alert("suite turned off");
     });
 });
+
+/** Ставим шпионов. Прерывают выполнение вызванной функции, при этом публикуя событие об её вызове.
+ * Они могу существовать только внутри describe или it блоков, внутри которых они определены.
+ * При вызоде из it() они уничтожаются. То есть каждый раз при запуске нового spec нужно создавать шпиона.
+ * Существуют специальные machers, которые взаимодействуют со spies.
+ * Например: toHaveBeenCalled, toHaveBeenCalledWith
+ * */
+describe("Testing spies ...", function(){
+    "use strict";
+    var foo, bar = null, anotherBar = null;
+
+    var foo = {
+        setBar: function(value) {
+            // Сообщение не будет показаваться,
+            // так как функция не будет вызвана, для её вызова нужно использовать .and.callThrough()
+            alert("setBar called !!!")
+            bar = value;
+        }
+    };
+
+    beforeEach(function(){
+        spyOn(foo, 'setBar');
+        foo.setBar(123);
+    });
+
+    it("tracks that the spy was called", function() {
+        expect(foo.setBar).toHaveBeenCalled();
+    });
+
+    it("tracks all the arguments of its calls", function() {
+        foo.setBar(456, 'another param');
+        expect(foo.setBar).toHaveBeenCalledWith(123);
+        expect(foo.setBar).toHaveBeenCalledWith(456, 'another param');
+    });
+
+    it("stops all execution on a function", function() {
+        expect(bar).toBeNull();
+    });
+});
