@@ -313,3 +313,5 @@ describe('Cresting bare spy', function() {
         expect(whatAmI.calls.mostRecent().args[0]).toEqual("I");
     });
 });
+
+// временная остановка, устал... потом добью
