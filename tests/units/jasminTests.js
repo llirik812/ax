@@ -14,7 +14,8 @@ describe("testing describe: ", function(){
         d = 12,
         regexpMatch = 'kirill',
         e = {},
-        truthy = "Kirill";
+        truthy = "Kirill",
+        arr = ["item1", "item2", "item2"];
 
     it("expects ...", function(){
         expect(b).toBe(undefined);
@@ -25,6 +26,7 @@ describe("testing describe: ", function(){
         expect(e.d).not.toBeDefined();
         expect(e.d).toBeUndefined();
         expect(truthy).not.toBeFalsy();
-        expect(truthy).toBeTruthy()
+        expect(truthy).toBeTruthy();
+        expect(arr).toContain("item2");
     });
 });
