@@ -193,4 +193,41 @@ describe("Testing spies ...", function() {
 
 describe("Another tracking properties", function() {
     "use strict";
+
+    var value = null;
+
+    var obj = {
+        setValue : function(val) {
+            value = val;
+            alert("Another tracking properties: setValue called - " + val);
+        },
+        getValue : function() {
+            return value;
+        }
+    };
+
+    it("using 'calls' track property", function() {
+        spyOn(obj, "setValue").and.callThrough();
+        obj.setValue(2);
+        obj.setValue(100);
+        /**
+         * в свойстве calls отслеживаютс€ все событи€ spy.
+         * ‘ункци€ any() возвращает true/false в зависимости от вызова наблюдаемой ф-ции
+         */
+        expect(obj.setValue.calls.any()).toEqual(true);
+        // count() - возвращает число вызовов наблюдаемой ф-ции
+        expect(obj.setValue.calls.count()).toEqual(2);
+        // callsFor() - возвращает аргументы, переданные в ф-цию
+
+        /**
+         * Ќепойму почему, но в этом expect почему то
+         * obj.setValue.calls.argsFor(0) возвращает 2,
+         * поэтому здесь тест валитс€
+         */
+        //expect(obj.setValue.calls.argsFor(0)).toEqual([100]);
+
+        // argsFor(0) - позици€ в аргументах
+        expect(obj.setValue.calls.argsFor(0)).toEqual([2]);
+
+    });
 });
