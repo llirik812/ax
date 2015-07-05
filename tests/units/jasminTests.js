@@ -124,7 +124,7 @@ describe("Testing spies ...", function() {
         },
         // на ней используем .and.callThrough()
         setAnotherBar : function(value) {
-            alert("setAnotherBar called by using .and.callThrough()");
+            alert("setAnotherBar called by using .and.callThrough() or something like this");
             anotherBar = value;
         },
         getAnotherBar : function() {
@@ -178,4 +178,15 @@ describe("Testing spies ...", function() {
         var result = foo.getBar();
         alert(result);
     });
+
+    /**
+     * Ставим шпиона на функцию, но вместо её вызова выбрасываем исключение
+     */
+    it("using spy callFake function", function(){
+        spyOn(foo,"setAnotherBar").and.throwError("quux");
+        expect(function() {
+            foo.setAnotherBar(123);
+        }).toThrowError("quux");
+    });
+
 });
