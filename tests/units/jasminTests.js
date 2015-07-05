@@ -59,6 +59,9 @@ describe("testing describe: ", function(){
         }
         expect(returnError).toThrowError(TypeError);
         expect(returnError).toThrowError(TypeError, "this type is insufficient");
-
     });
+});
+
+describe("Trying more complex tests", function(){
+    "use strict";
 });
