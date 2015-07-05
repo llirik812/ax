@@ -9,12 +9,16 @@ describe("testing describe: ", function(){
         expect(a).not.toBe(false);
     });
 
-    var b, c = null, d = 12;
+    var b,
+        c = null,
+        d = 12,
+        regexpMatch = 'kirill';
 
     it("expects ...", function(){
         expect(b).toBe(undefined);
         expect(c).toBe(null);
         expect(d).toEqual(12);
         expect(d).not.toEqual(11);
+        expect(regexpMatch).toMatch(/^kir.*$/);
     });
 });
