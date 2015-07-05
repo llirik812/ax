@@ -189,5 +189,8 @@ describe("Testing spies ...", function() {
             foo.setAnotherBar(123);
         }).toThrowError("quux");
     });
+});
 
+describe("Another tracking properties", function() {
+    "use strict";
 });
