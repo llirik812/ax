@@ -255,4 +255,32 @@ describe("Another tracking properties", function() {
         expect(obj.setValue.calls.mostRecent()).toEqual({object: obj, args: [456]});
     });
 
+    it("has a shortcut to the most recent call", function() {
+        spyOn(obj, "setValue");
+        obj.setValue(123);
+        obj.setValue(456);
+        /**
+         * first() - то же что и предыдущее только дл€ первого вызова
+         */
+        expect(obj.setValue.calls.first()).toEqual({object: obj, args: [123]});
+    });
+
+    it("can be reset", function() {
+        spyOn(obj, 'setValue');
+
+        obj.setValue(123);
+        obj.setValue(456, "baz");
+
+        expect(obj.setValue.calls.any()).toBe(true);
+
+        /**
+         * »спользу€ reset() можно сбросить все записи в calls
+         */
+        obj.setValue.calls.reset();
+
+        expect(obj.setValue.calls.any()).toBe(false);
+    });
+
+    
+
 });
