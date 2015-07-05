@@ -245,7 +245,7 @@ describe("Another tracking properties", function() {
         expect(obj.setValue.calls.all()).toEqual([{object: obj, args: [123]}, {object: obj, args: [23]}]);
     });
 
-    it("has a shortcut to the most recent call", function() {
+    it('using mostRecent() function', function() {
         spyOn(obj, "setValue");
         obj.setValue(123);
         obj.setValue(456);
@@ -255,7 +255,7 @@ describe("Another tracking properties", function() {
         expect(obj.setValue.calls.mostRecent()).toEqual({object: obj, args: [456]});
     });
 
-    it("has a shortcut to the most recent call", function() {
+    it('using first() function', function() {
         spyOn(obj, "setValue");
         obj.setValue(123);
         obj.setValue(456);
@@ -265,11 +265,11 @@ describe("Another tracking properties", function() {
         expect(obj.setValue.calls.first()).toEqual({object: obj, args: [123]});
     });
 
-    it("can be reset", function() {
+    it('can be reset', function() {
         spyOn(obj, 'setValue');
 
         obj.setValue(123);
-        obj.setValue(456, "baz");
+        obj.setValue(456, 'baz');
 
         expect(obj.setValue.calls.any()).toBe(true);
 
@@ -280,7 +280,9 @@ describe("Another tracking properties", function() {
 
         expect(obj.setValue.calls.any()).toBe(false);
     });
+});
 
-    
+describe('Cresting bare spy', function() {
+    "use strict";
 
 });
