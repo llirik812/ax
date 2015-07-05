@@ -84,3 +84,20 @@ describe("Trying more complex tests", function(){
         ++count;
     }
 });
+
+// Предположим, что есть один тест (suite), который нам временно ненужен, но код нужно оставить
+// включенное состояние
+describe("This is xdescribe example", function(){
+    "use strict";
+    it("", function(){
+        alert("suite turned off");
+    });
+});
+// тоже только выключенное
+xdescribe("This is xdescribe example", function(){
+    "use strict";
+    // ну и для spec`а выключим, хотя это и не необходимо
+    xit("", function(){
+        alert("suite turned off");
+    });
+});
