@@ -22,5 +22,6 @@ describe("testing describe: ", function(){
         expect(d).not.toEqual(11);
         expect(regexpMatch).toMatch(/^kir.*$/);
         expect(e.d).not.toBeDefined();
+        expect(e.d).toBeUndefined();
     });
 });
