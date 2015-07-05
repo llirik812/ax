@@ -64,4 +64,23 @@ describe("testing describe: ", function(){
 
 describe("Trying more complex tests", function(){
     "use strict";
+
+    /** Создаем функции, которые будут запускаться перед каждым it() спеком(spec).
+     * Для этого наклядно продемонстрируем изменение значания переменной varAB
+    */
+    var varAB = 0, count = 0;
+    // перед
+    beforeEach(function(){
+       ++varAB;
+    });
+    // после
+    afterEach(function(){
+        ++varAB;
+    });
+    while (count < 10) {
+        it("show varAB", function () {
+            alert("varAB: " + varAB);
+        });
+        ++count;
+    }
 });
