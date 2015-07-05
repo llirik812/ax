@@ -245,4 +245,14 @@ describe("Another tracking properties", function() {
         expect(obj.setValue.calls.all()).toEqual([{object: obj, args: [123]}, {object: obj, args: [23]}]);
     });
 
+    it("has a shortcut to the most recent call", function() {
+        spyOn(obj, "setValue");
+        obj.setValue(123);
+        obj.setValue(456);
+        /**
+         * mostRecent() - возвращает последний вызов ф-ции
+         */
+        expect(obj.setValue.calls.mostRecent()).toEqual({object: obj, args: [456]});
+    });
+
 });
