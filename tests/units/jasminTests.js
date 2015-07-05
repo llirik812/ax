@@ -1,11 +1,11 @@
 // http://jasmine.github.io/2.0/introduction.html
 
-describe("testing describe: ", function(){
+describe("testing describe: ", function() {
     "use strict";
 
     var a = true;
 
-    it("a to be true", function(){
+    it("a to be true", function() {
         expect(a).not.toBe(false);
     });
 
@@ -19,7 +19,7 @@ describe("testing describe: ", function(){
         pi = 3.1415926,
         e = 2.78;
 
-    it("expects ...", function(){
+    it("expects ...", function() {
         expect(b).toBe(undefined);
         expect(c).toBe(null);
 
@@ -43,17 +43,17 @@ describe("testing describe: ", function(){
         expect(e).not.toBeGreaterThan(pi);
 
         // Тестирование функций на предмет выбрасывания исключения
-        function returnValueNotThrow(){
+        function returnValueNotThrow() {
             return 1 + 2;
         }
-        function returnValueThrow(){
+        function returnValueThrow() {
             return zxs + 2;
         }
         expect(returnValueNotThrow).not.toThrow();
         expect(returnValueThrow).toThrow();
 
         // Делаем проверку выброса исключений
-        function returnError(){
+        function returnError() {
             throw new TypeError("this type is insufficient");
             return true;
         }
@@ -62,7 +62,7 @@ describe("testing describe: ", function(){
     });
 });
 
-describe("Trying more complex tests", function(){
+describe("Trying more complex tests", function() {
     "use strict";
 
     /** Создаем функции, которые будут запускаться перед каждым it() спеком(spec).
@@ -70,11 +70,11 @@ describe("Trying more complex tests", function(){
     */
     var varAB = 0, count = 0;
     // перед
-    beforeEach(function(){
+    beforeEach(function() {
        ++varAB;
     });
     // после
-    afterEach(function(){
+    afterEach(function() {
         ++varAB;
     });
     while (count < 10) {
@@ -87,17 +87,17 @@ describe("Trying more complex tests", function(){
 
 // Предположим, что есть один тест (suite), который нам временно ненужен, но код нужно оставить
 // включенное состояние
-describe("This is xdescribe example", function(){
+describe("This is xdescribe example", function() {
     "use strict";
     it("", function(){
         alert("suite turned off");
     });
 });
 // тоже только выключенное
-xdescribe("This is xdescribe example", function(){
+xdescribe("This is xdescribe example", function() {
     "use strict";
     // ну и для spec`а выключим, хотя это и не необходимо
-    xit("", function(){
+    xit("", function() {
         alert("suite turned off");
     });
 });
@@ -108,7 +108,7 @@ xdescribe("This is xdescribe example", function(){
  * Существуют специальные machers, которые взаимодействуют со spies.
  * Например: toHaveBeenCalled, toHaveBeenCalledWith
  * */
-describe("Testing spies ...", function(){
+describe("Testing spies ...", function() {
     "use strict";
     var foo, bar = null, anotherBar = null;
 
@@ -119,14 +119,20 @@ describe("Testing spies ...", function(){
             alert("setBar called !!!")
             bar = value;
         },
+        getBar : function() {
+            return bar;
+        },
         // на ней используем .and.callThrough()
         setAnotherBar : function(value) {
             alert("setAnotherBar called by using .and.callThrough()");
             anotherBar = value;
+        },
+        getAnotherBar : function() {
+            return anotherBar;
         }
     };
 
-    beforeEach(function(){
+    beforeEach(function() {
         spyOn(foo, 'setBar');
         foo.setBar(123);
     });
@@ -149,5 +155,27 @@ describe("Testing spies ...", function(){
         spyOn(foo, "setAnotherBar").and.callThrough();
         foo.setAnotherBar(123);
         expect(foo.setAnotherBar).toHaveBeenCalledWith(123);
+    });
+
+    /** Функция returnValue, так же как и callThrough выполняет вызов ф-ции, но при этои еще
+     * заменяет возвращаемое ею значение другим.
+     */
+    it("substitute function returning value by another value", function() {
+        spyOn(foo,"getBar").and.returnValue(999);
+        foo.setBar(12121);
+        // Call with substitution
+        var result = foo.getBar();
+        alert(result);
+    });
+
+    /**
+     * Ставим шпиона на функцию, но в момент её вызова вызываем не её а указанную функцию
+     */
+    it("using spy callFake function", function(){
+        spyOn(foo,"getBar").and.callFake(function(){
+            return "fake function called";
+        });
+        var result = foo.getBar();
+        alert(result);
     });
 });
