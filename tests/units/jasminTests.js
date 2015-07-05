@@ -38,5 +38,8 @@ describe("testing describe: ", function(){
 
         expect(e).toBeLessThan(pi);
         expect(pi).not.toBeLessThan(e);
+
+        expect(pi).toBeGreaterThan(e);
+        expect(e).not.toBeGreaterThan(pi);
     });
 });
