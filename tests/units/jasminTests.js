@@ -51,5 +51,14 @@ describe("testing describe: ", function(){
         }
         expect(returnValueNotThrow).not.toThrow();
         expect(returnValueThrow).toThrow();
+
+        // Делаем проверку выброса исключений
+        function returnError(){
+            throw new TypeError("this type is insufficient");
+            return true;
+        }
+        expect(returnError).toThrowError(TypeError);
+        expect(returnError).toThrowError(TypeError, "this type is insufficient");
+
     });
 });
