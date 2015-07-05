@@ -41,5 +41,15 @@ describe("testing describe: ", function(){
 
         expect(pi).toBeGreaterThan(e);
         expect(e).not.toBeGreaterThan(pi);
+
+        // Тестирование функций на предмет выбрасывания исключения
+        function returnValueNotThrow(){
+            return 1 + 2;
+        }
+        function returnValueThrow(){
+            return zxs + 2;
+        }
+        expect(returnValueNotThrow).not.toThrow();
+        expect(returnValueThrow).toThrow();
     });
 });
