@@ -118,6 +118,11 @@ describe("Testing spies ...", function(){
             // так как функция не будет вызвана, для её вызова нужно использовать .and.callThrough()
             alert("setBar called !!!")
             bar = value;
+        },
+        // на ней используем .and.callThrough()
+        setAnotherBar : function(value) {
+            alert("setAnotherBar called by using .and.callThrough()");
+            anotherBar = value;
         }
     };
 
@@ -138,5 +143,11 @@ describe("Testing spies ...", function(){
 
     it("stops all execution on a function", function() {
         expect(bar).toBeNull();
+    });
+
+    it("testing callThrough()", function() {
+        spyOn(foo, "setAnotherBar").and.callThrough();
+        foo.setAnotherBar(123);
+        expect(foo.setAnotherBar).toHaveBeenCalledWith(123);
     });
 });
