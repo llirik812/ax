@@ -230,4 +230,19 @@ describe("Another tracking properties", function() {
         expect(obj.setValue.calls.argsFor(0)).toEqual([2]);
 
     });
+
+    it("can provide the context and arguments to all calls", function() {
+        spyOn(obj, 'setValue');
+        obj.setValue(123);
+        obj.setValue(23);
+        /**
+         * all() - возвращает массив вызовов, то есть для данных двух вызовов будет возвращен массив:
+         * [
+         *     {object : { setValue : spy on setValue, getValue : Function }, args : [ 123 ] },
+         *     {object : { setValue : spy on setValue, getValue : Function }, args : [ 23 ] }
+         * ]
+         */
+        expect(obj.setValue.calls.all()).toEqual([{object: obj, args: [123]}, {object: obj, args: [23]}]);
+    });
+
 });
