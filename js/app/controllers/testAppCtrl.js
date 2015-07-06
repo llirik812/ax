@@ -4,10 +4,10 @@ testApp.controller("testAppCtrl", ['$scope', '$http', function($scope, $http){
         alert("This is a message");
     };
 
-    $scope.arr = [{'name':'kir1','surname':'oso1'},
-            {'name':'kir2','surname':'oso2'},
-            {'name':'kir3','surname':'oso3'},
-            {'name':'kir4','surname':'oso4'}];
+    $scope.arr = [{'name' : 'kirill', 'surname' : 'osokin'},
+                {'name' : 'vecheslav', 'surname' : 'galibin'},
+                {'name' : 'dmitry', 'surname' : 'shuvalov'},
+                {'name' : 'ivan', 'surname' : 'pirogov'}];
 
     $scope.value1 = 10;
 
@@ -17,7 +17,12 @@ testApp.controller("testAppCtrl", ['$scope', '$http', function($scope, $http){
             ++this.changeCounter;
         },
         pattern : /^(\s|\w|\d)*$/,
-        changeCounter : 0
+        changeCounter : 0,
+        /**
+         * Хотел попробовать в зависимости от значения этой переменной фильтровать записи
+         * или по имени или по фамилии, но пока не знаю как...
+         */
+        option : 'name'
     };
 
     /*-------- Для сортировки ------------*/

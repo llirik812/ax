@@ -26,9 +26,20 @@
             <span class="subtitle">Фильтрация идет по всем полям записей в массиве (непонятно, как работает ng-trim):</span>
         </div>
 
+        <hr /> <!---------------------------------------->
+
         <div class="title">Filter:
             <input type="text" ng-model="input1.filter" ng-change="input1.onChange()" ng-pattern="init1.pattern" ng-trim="true">
         </div>
+
+        <!-- Пока не работает -->
+        <span>Select search type:</span>
+        <select ng-model="input1.option">
+            <option value="name">name</option>
+            <option value="surname">surname</option>
+        </select>
+
+        <hr /> <!---------------------------------------->
 
         <div>
             <span class="subtitle">Введенное в input поле значение:</span>
@@ -43,7 +54,6 @@
 
         <div><span class="subtitle">Init variable (ng-init):</span> {{initVar}}</div>
         <div><span class="subtitle">Counter of changes:</span> {{input1.changeCounter}}</div>
-
 
         <hr /> <!------------------------------------------------------->
 
@@ -75,10 +85,6 @@
         <div>
             <span ng-bind-template="{{text1}}"></span>
         </div>
-
-        <hr /> <!---------------- ngBindTemplate --------------------------->
-
-        
     </div>
 </body>
 </html>
