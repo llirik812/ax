@@ -42,6 +42,7 @@ testApp.controller("testAppCtrl", ['$scope', '$http', function($scope, $http){
     $scope.data = null;
 
     $http({method : 'GET', url : 'json.php', responseType : 'json'}).success(function(data, status){
+        alert('SUCCESS !!!!');
         $scope.data = data;
     }).error(function(data, status, headers, config){
         alert('error:'+ status);

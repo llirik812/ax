@@ -1,4 +1,5 @@
 <?
+error_log("json.php called");
 header('Content-Type: application/json;charset=utf-8');
 $json_response = '[{"key" : "5", "value" : "kirill"},'.
                   '{"key" : "3", "value" : "dsfdfs"},'.
