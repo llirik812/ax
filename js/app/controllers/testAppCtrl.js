@@ -41,4 +41,7 @@ testApp.controller("testAppCtrl", ['$scope', '$http', function($scope, $http){
     }).error(function(data, status, headers, config){
         alert('error:'+ status);
     });
+
+    /* -------- переменная для ng-bint-template ---------- */
+    $scope.text1 = "variable for template";
 }]);
