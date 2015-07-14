@@ -42,7 +42,7 @@ describe("testing describe: ", function() {
         expect(pi).toBeGreaterThan(e);
         expect(e).not.toBeGreaterThan(pi);
 
-        // Тестирование функций на предмет выбрасывания исключения
+        // РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёР№ РЅР° РїСЂРµРґРјРµС‚ РІС‹Р±СЂР°СЃС‹РІР°РЅРёСЏ РёСЃРєР»СЋС‡РµРЅРёСЏ
         function returnValueNotThrow() {
             return 1 + 2;
         }
@@ -52,7 +52,7 @@ describe("testing describe: ", function() {
         expect(returnValueNotThrow).not.toThrow();
         expect(returnValueThrow).toThrow();
 
-        // Делаем проверку выброса исключений
+        // Р”РµР»Р°РµРј РїСЂРѕРІРµСЂРєСѓ РІС‹Р±СЂРѕСЃР° РёСЃРєР»СЋС‡РµРЅРёР№
         function returnError() {
             throw new TypeError("this type is insufficient");
             return true;
@@ -65,15 +65,15 @@ describe("testing describe: ", function() {
 describe("Trying more complex tests", function() {
     "use strict";
 
-    /** Создаем функции, которые будут запускаться перед каждым it() спеком(spec).
-     * Для этого наклядно продемонстрируем изменение значания переменной varAB
+    /** РЎРѕР·РґР°РµРј С„СѓРЅРєС†РёРё, РєРѕС‚РѕСЂС‹Рµ Р±СѓРґСѓС‚ Р·Р°РїСѓСЃРєР°С‚СЊСЃСЏ РїРµСЂРµРґ РєР°Р¶РґС‹Рј it() СЃРїРµРєРѕРј(spec).
+     * Р”Р»СЏ СЌС‚РѕРіРѕ РЅР°РєР»СЏРґРЅРѕ РїСЂРѕРґРµРјРѕРЅСЃС‚СЂРёСЂСѓРµРј РёР·РјРµРЅРµРЅРёРµ Р·РЅР°С‡Р°РЅРёСЏ РїРµСЂРµРјРµРЅРЅРѕР№ varAB
     */
     var varAB = 0, count = 0;
-    // перед
+    // РїРµСЂРµРґ
     beforeEach(function() {
        ++varAB;
     });
-    // после
+    // РїРѕСЃР»Рµ
     afterEach(function() {
         ++varAB;
     });
@@ -85,29 +85,29 @@ describe("Trying more complex tests", function() {
     }
 });
 
-// Предположим, что есть один тест (suite), который нам временно ненужен, но код нужно оставить
-// включенное состояние
+// РџСЂРµРґРїРѕР»РѕР¶РёРј, С‡С‚Рѕ РµСЃС‚СЊ РѕРґРёРЅ С‚РµСЃС‚ (suite), РєРѕС‚РѕСЂС‹Р№ РЅР°Рј РІСЂРµРјРµРЅРЅРѕ РЅРµРЅСѓР¶РµРЅ, РЅРѕ РєРѕРґ РЅСѓР¶РЅРѕ РѕСЃС‚Р°РІРёС‚СЊ
+// РІРєР»СЋС‡РµРЅРЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ
 describe("This is xdescribe example", function() {
     "use strict";
     it("", function(){
         alert("suite turned off");
     });
 });
-// тоже только выключенное
+// С‚РѕР¶Рµ С‚РѕР»СЊРєРѕ РІС‹РєР»СЋС‡РµРЅРЅРѕРµ
 xdescribe("This is xdescribe example", function() {
     "use strict";
-    // ну и для spec`а выключим, хотя это и не необходимо
+    // РЅСѓ Рё РґР»СЏ spec`Р° РІС‹РєР»СЋС‡РёРј, С…РѕС‚СЏ СЌС‚Рѕ Рё РЅРµ РЅРµРѕР±С…РѕРґРёРјРѕ
     xit("", function() {
         alert("suite turned off");
     });
 });
 
-/** Ставим шпионов. Прерывают выполнение вызванной функции (можно задать этот
- * функционал явно через ".and.stub()"), при этом публикуя событие об её вызове.
- * Они могу существовать только внутри describe или it блоков, внутри которых они определены.
- * При вызоде из it() они уничтожаются. То есть каждый раз при запуске нового spec нужно создавать шпиона.
- * Существуют специальные machers, которые взаимодействуют со spies.
- * Например: toHaveBeenCalled, toHaveBeenCalledWith
+/** РЎС‚Р°РІРёРј С€РїРёРѕРЅРѕРІ. РџСЂРµСЂС‹РІР°СЋС‚ РІС‹РїРѕР»РЅРµРЅРёРµ РІС‹Р·РІР°РЅРЅРѕР№ С„СѓРЅРєС†РёРё (РјРѕР¶РЅРѕ Р·Р°РґР°С‚СЊ СЌС‚РѕС‚
+ * С„СѓРЅРєС†РёРѕРЅР°Р» СЏРІРЅРѕ С‡РµСЂРµР· ".and.stub()"), РїСЂРё СЌС‚РѕРј РїСѓР±Р»РёРєСѓСЏ СЃРѕР±С‹С‚РёРµ РѕР± РµС‘ РІС‹Р·РѕРІРµ.
+ * РћРЅРё РјРѕРіСѓ СЃСѓС‰РµСЃС‚РІРѕРІР°С‚СЊ С‚РѕР»СЊРєРѕ РІРЅСѓС‚СЂРё describe РёР»Рё it Р±Р»РѕРєРѕРІ, РІРЅСѓС‚СЂРё РєРѕС‚РѕСЂС‹С… РѕРЅРё РѕРїСЂРµРґРµР»РµРЅС‹.
+ * РџСЂРё РІС‹Р·РѕРґРµ РёР· it() РѕРЅРё СѓРЅРёС‡С‚РѕР¶Р°СЋС‚СЃСЏ. РўРѕ РµСЃС‚СЊ РєР°Р¶РґС‹Р№ СЂР°Р· РїСЂРё Р·Р°РїСѓСЃРєРµ РЅРѕРІРѕРіРѕ spec РЅСѓР¶РЅРѕ СЃРѕР·РґР°РІР°С‚СЊ С€РїРёРѕРЅР°.
+ * РЎСѓС‰РµСЃС‚РІСѓСЋС‚ СЃРїРµС†РёР°Р»СЊРЅС‹Рµ machers, РєРѕС‚РѕСЂС‹Рµ РІР·Р°РёРјРѕРґРµР№СЃС‚РІСѓСЋС‚ СЃРѕ spies.
+ * РќР°РїСЂРёРјРµСЂ: toHaveBeenCalled, toHaveBeenCalledWith
  * */
 describe("Testing spies ...", function() {
     "use strict";
@@ -115,15 +115,15 @@ describe("Testing spies ...", function() {
 
     var foo = {
         setBar: function(value) {
-            // Сообщение не будет показаваться,
-            // так как функция не будет вызвана, для её вызова нужно использовать .and.callThrough()
+            // РЎРѕРѕР±С‰РµРЅРёРµ РЅРµ Р±СѓРґРµС‚ РїРѕРєР°Р·Р°РІР°С‚СЊСЃСЏ,
+            // С‚Р°Рє РєР°Рє С„СѓРЅРєС†РёСЏ РЅРµ Р±СѓРґРµС‚ РІС‹Р·РІР°РЅР°, РґР»СЏ РµС‘ РІС‹Р·РѕРІР° РЅСѓР¶РЅРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ .and.callThrough()
             alert("setBar called !!!")
             bar = value;
         },
         getBar : function() {
             return bar;
         },
-        // на ней используем .and.callThrough()
+        // РЅР° РЅРµР№ РёСЃРїРѕР»СЊР·СѓРµРј .and.callThrough()
         setAnotherBar : function(value) {
             alert("setAnotherBar called by using .and.callThrough() or something like this");
             anotherBar = value;
@@ -158,8 +158,8 @@ describe("Testing spies ...", function() {
         expect(foo.setAnotherBar).toHaveBeenCalledWith(123);
     });
 
-    /** Функция returnValue, так же как и callThrough выполняет вызов ф-ции, но при этои еще
-     * заменяет возвращаемое ею значение другим.
+    /** Р¤СѓРЅРєС†РёСЏ returnValue, С‚Р°Рє Р¶Рµ РєР°Рє Рё callThrough РІС‹РїРѕР»РЅСЏРµС‚ РІС‹Р·РѕРІ С„-С†РёРё, РЅРѕ РїСЂРё СЌС‚РѕРё РµС‰Рµ
+     * Р·Р°РјРµРЅСЏРµС‚ РІРѕР·РІСЂР°С‰Р°РµРјРѕРµ РµСЋ Р·РЅР°С‡РµРЅРёРµ РґСЂСѓРіРёРј.
      */
     it("substitute function returning value by another value", function() {
         spyOn(foo,"getBar").and.returnValue(999);
@@ -170,7 +170,7 @@ describe("Testing spies ...", function() {
     });
 
     /**
-     * Ставим шпиона на функцию, но в момент её вызова вызываем не её а указанную функцию
+     * РЎС‚Р°РІРёРј С€РїРёРѕРЅР° РЅР° С„СѓРЅРєС†РёСЋ, РЅРѕ РІ РјРѕРјРµРЅС‚ РµС‘ РІС‹Р·РѕРІР° РІС‹Р·С‹РІР°РµРј РЅРµ РµС‘ Р° СѓРєР°Р·Р°РЅРЅСѓСЋ С„СѓРЅРєС†РёСЋ
      */
     it("using spy callFake function", function(){
         spyOn(foo,"getBar").and.callFake(function(){
@@ -181,7 +181,7 @@ describe("Testing spies ...", function() {
     });
 
     /**
-     * Ставим шпиона на функцию, но вместо её вызова выбрасываем исключение
+     * РЎС‚Р°РІРёРј С€РїРёРѕРЅР° РЅР° С„СѓРЅРєС†РёСЋ, РЅРѕ РІРјРµСЃС‚Рѕ РµС‘ РІС‹Р·РѕРІР° РІС‹Р±СЂР°СЃС‹РІР°РµРј РёСЃРєР»СЋС‡РµРЅРёРµ
      */
     it("using spy callFake function", function(){
         spyOn(foo,"setAnotherBar").and.throwError("quux");
@@ -211,22 +211,22 @@ describe("Another tracking properties", function() {
         obj.setValue(2);
         obj.setValue(100);
         /**
-         * в свойстве calls отслеживаются все события spy.
-         * Функция any() возвращает true/false в зависимости от вызова наблюдаемой ф-ции
+         * РІ СЃРІРѕР№СЃС‚РІРµ calls РѕС‚СЃР»РµР¶РёРІР°СЋС‚СЃСЏ РІСЃРµ СЃРѕР±С‹С‚РёСЏ spy.
+         * Р¤СѓРЅРєС†РёСЏ any() РІРѕР·РІСЂР°С‰Р°РµС‚ true/false РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ РІС‹Р·РѕРІР° РЅР°Р±Р»СЋРґР°РµРјРѕР№ С„-С†РёРё
          */
         expect(obj.setValue.calls.any()).toEqual(true);
-        // count() - возвращает число вызовов наблюдаемой ф-ции
+        // count() - РІРѕР·РІСЂР°С‰Р°РµС‚ С‡РёСЃР»Рѕ РІС‹Р·РѕРІРѕРІ РЅР°Р±Р»СЋРґР°РµРјРѕР№ С„-С†РёРё
         expect(obj.setValue.calls.count()).toEqual(2);
-        // callsFor() - возвращает аргументы, переданные в ф-цию
+        // callsFor() - РІРѕР·РІСЂР°С‰Р°РµС‚ Р°СЂРіСѓРјРµРЅС‚С‹, РїРµСЂРµРґР°РЅРЅС‹Рµ РІ С„-С†РёСЋ
 
         /**
-         * Непойму почему, но в этом expect почему то
-         * obj.setValue.calls.argsFor(0) возвращает 2,
-         * поэтому здесь тест валится
+         * РќРµРїРѕР№РјСѓ РїРѕС‡РµРјСѓ, РЅРѕ РІ СЌС‚РѕРј expect РїРѕС‡РµРјСѓ С‚Рѕ
+         * obj.setValue.calls.argsFor(0) РІРѕР·РІСЂР°С‰Р°РµС‚ 2,
+         * РїРѕСЌС‚РѕРјСѓ Р·РґРµСЃСЊ С‚РµСЃС‚ РІР°Р»РёС‚СЃСЏ
          */
         //expect(obj.setValue.calls.argsFor(0)).toEqual([100]);
 
-        // argsFor(0) - позиция в аргументах
+        // argsFor(0) - РїРѕР·РёС†РёСЏ РІ Р°СЂРіСѓРјРµРЅС‚Р°С…
         expect(obj.setValue.calls.argsFor(0)).toEqual([2]);
 
     });
@@ -236,7 +236,7 @@ describe("Another tracking properties", function() {
         obj.setValue(123);
         obj.setValue(23);
         /**
-         * all() - возвращает массив вызовов, то есть для данных двух вызовов будет возвращен массив:
+         * all() - РІРѕР·РІСЂР°С‰Р°РµС‚ РјР°СЃСЃРёРІ РІС‹Р·РѕРІРѕРІ, С‚Рѕ РµСЃС‚СЊ РґР»СЏ РґР°РЅРЅС‹С… РґРІСѓС… РІС‹Р·РѕРІРѕРІ Р±СѓРґРµС‚ РІРѕР·РІСЂР°С‰РµРЅ РјР°СЃСЃРёРІ:
          * [
          *     {object : { setValue : spy on setValue, getValue : Function }, args : [ 123 ] },
          *     {object : { setValue : spy on setValue, getValue : Function }, args : [ 23 ] }
@@ -250,7 +250,7 @@ describe("Another tracking properties", function() {
         obj.setValue(123);
         obj.setValue(456);
         /**
-         * mostRecent() - возвращает последний вызов ф-ции
+         * mostRecent() - РІРѕР·РІСЂР°С‰Р°РµС‚ РїРѕСЃР»РµРґРЅРёР№ РІС‹Р·РѕРІ С„-С†РёРё
          */
         expect(obj.setValue.calls.mostRecent()).toEqual({object: obj, args: [456]});
     });
@@ -260,7 +260,7 @@ describe("Another tracking properties", function() {
         obj.setValue(123);
         obj.setValue(456);
         /**
-         * first() - то же что и предыдущее только для первого вызова
+         * first() - С‚Рѕ Р¶Рµ С‡С‚Рѕ Рё РїСЂРµРґС‹РґСѓС‰РµРµ С‚РѕР»СЊРєРѕ РґР»СЏ РїРµСЂРІРѕРіРѕ РІС‹Р·РѕРІР°
          */
         expect(obj.setValue.calls.first()).toEqual({object: obj, args: [123]});
     });
@@ -274,7 +274,7 @@ describe("Another tracking properties", function() {
         expect(obj.setValue.calls.any()).toBe(true);
 
         /**
-         * Используя reset() можно сбросить все записи в calls
+         * РСЃРїРѕР»СЊР·СѓСЏ reset() РјРѕР¶РЅРѕ СЃР±СЂРѕСЃРёС‚СЊ РІСЃРµ Р·Р°РїРёСЃРё РІ calls
          */
         obj.setValue.calls.reset();
 
@@ -314,4 +314,4 @@ describe('Cresting bare spy', function() {
     });
 });
 
-// временная остановка, устал... потом добью
+// РІСЂРµРјРµРЅРЅР°СЏ РѕСЃС‚Р°РЅРѕРІРєР°, СѓСЃС‚Р°Р»... РїРѕС‚РѕРј РґРѕР±СЊСЋ
