@@ -29,19 +29,19 @@ describe("testing mock http", function(){
         scope = {};
         $httpBackend = _$httpBackend_;
 
-        // Создаем mock
+        // РЎРѕР·РґР°РµРј mock
         $httpBackend.expectGET('json.php').respond([
             {"key" : "5", "value" : "kirill"},
             {"key" : "3", "value" : "dsfdfs"}
         ]);
 
         scope = $rootScope.$new();
-        // Наш mock отрабатывает
+        // РќР°С€ mock РѕС‚СЂР°Р±Р°С‚С‹РІР°РµС‚
         ctrl = $controller('testAppCtrl', {$scope : scope});
     }));
 
     it('should be called', function(){
-        // вызывает функции success в testAppCtrl
+        // РІС‹Р·С‹РІР°РµС‚ С„СѓРЅРєС†РёРё success РІ testAppCtrl
         alert("Calling $httpBackend.flush()");
         $httpBackend.flush();
         alert(scope.data);
