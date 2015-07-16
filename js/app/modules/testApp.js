@@ -71,12 +71,14 @@ testApp.provider('greeting', function() {
     };
 });
 
+testApp.constant('greetingText', 'Howdy there, ');
+
 /* ----- There are two phases while starting angular App: config, run ----- */
 // setting additional code to this phases
-testApp.config(function(greetingProvider){
+testApp.config(function(greetingProvider, greetingText){
     console.log('Additional config section works');
 
-    greetingProvider.setText("Howdy there, ");
+    greetingProvider.setText(greetingText);
 
     /*
     the config function runs in the configuration phase when no services are available
