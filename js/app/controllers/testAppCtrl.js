@@ -45,10 +45,10 @@ function($scope, $http, firstService1, firstService2, firstLogService, secondSer
     $scope.data = null;
 
     $http({method : 'GET', url : 'json.php', responseType : 'json'}).success(function(data, status){
-        alert('SUCCESS !!!!');
+        console.log('json.php received !!!!');
         $scope.data = data;
     }).error(function(data, status, headers, config){
-        alert('error:'+ status);
+        console.log('error:'+ status);
     });
 
     /* -------- переменная для ng-bint-template ---------- */
