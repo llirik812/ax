@@ -1,7 +1,10 @@
 "use strict";
 
-testApp.controller("testAppCtrl", ['$scope', '$injector', '$http', 'firstService1',  'firstService2', 'firstLogService', 'secondService1', 'secondService2',  'secondLogService',
+function functionToInject(firstService1){
+    firstService1.log("Called explicitly injected service");
+}
 
+testApp.controller("testAppCtrl", ['$scope', '$injector', '$http', 'firstService1',  'firstService2', 'firstLogService', 'secondService1', 'secondService2',  'secondLogService',
 function($scope, $injector, $http, firstService1, firstService2, firstLogService, secondService1, secondService2, secondLogService){
     $scope.showMessage = function(){
         alert("This is a message");
@@ -65,4 +68,7 @@ function($scope, $injector, $http, firstService1, firstService2, firstLogService
     secondService1('Using service number 1');
     secondService2('Using service number 2');
     secondLogService('Using service number 3');
+
+    /* ------- Use injection in explicit way -------- */
+    $injector.invoke(functionToInject);
 }]);
