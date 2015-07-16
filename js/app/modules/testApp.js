@@ -56,12 +56,35 @@ testApp.value('secondLogService', function(str){
     console.log(stringToWay2 + str);
 });
 
+/* ---- Added greeting provider ---- */
+testApp.provider('greeting', function() {
+    var text = 'Hello, ';
+
+    this.setText = function(value) {
+        text = value;
+    };
+
+    this.$get = function() {
+        return function(name) {
+            console.log(text + name);
+        };
+    };
+});
 
 /* ----- There are two phases while starting angular App: config, run ----- */
 // setting additional code to this phases
-testApp.config(function(){
+testApp.config(function(greetingProvider){
     console.log('Additional config section works');
+
+    greetingProvider.setText("Howdy there, ");
+
+    /*
+    the config function runs in the configuration phase when no services are available
+    so this code below will does not work
+    */
+    //greetingProvider.$get("Irina !");
 });
-testApp.run(function(){
+testApp.run(function(greeting){
     console.log('Additional run section works');
+    greeting("Kirill !");
 });
