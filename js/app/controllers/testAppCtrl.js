@@ -1,8 +1,8 @@
 "use strict";
 
-testApp.controller("testAppCtrl", ['$scope', '$http', 'firstService1',  'firstService2', 'firstLogService', 'secondService1', 'secondService2',  'secondLogService',
+testApp.controller("testAppCtrl", ['$scope', '$injector', '$http', 'firstService1',  'firstService2', 'firstLogService', 'secondService1', 'secondService2',  'secondLogService',
 
-function($scope, $http, firstService1, firstService2, firstLogService, secondService1, secondService2, secondLogService){
+function($scope, $injector, $http, firstService1, firstService2, firstLogService, secondService1, secondService2, secondLogService){
     $scope.showMessage = function(){
         alert("This is a message");
     };
@@ -60,6 +60,8 @@ function($scope, $http, firstService1, firstService2, firstLogService, secondSer
     firstService2.log('Using service number 2');
     firstLogService('Using service number 3');
 
+    var secondService1 = $injector.get('secondService1');
+    secondService1('Using service number 1 (by injector)');
     secondService1('Using service number 1');
     secondService2('Using service number 2');
     secondLogService('Using service number 3');
