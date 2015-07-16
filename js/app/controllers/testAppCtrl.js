@@ -4,7 +4,7 @@ function functionToInject(firstService1){
     firstService1.log("Called explicitly injected service");
 }
 
-testApp.controller("testAppCtrl", ['$scope', '$injector', '$http', 'firstService1',  'firstService2', 'firstLogService', 'secondService1', 'secondService2',  'secondLogService',
+angular.module('testApp').controller("testAppCtrl", ['$scope', '$injector', '$http', 'firstService1',  'firstService2', 'firstLogService', 'secondService1', 'secondService2',  'secondLogService',
 function($scope, $injector, $http, firstService1, firstService2, firstLogService, secondService1, secondService2, secondLogService){
     $scope.showMessage = function(){
         alert("This is a message");
@@ -71,4 +71,6 @@ function($scope, $injector, $http, firstService1, firstService2, firstLogService
 
     /* ------- Use injection in explicit way -------- */
     $injector.invoke(functionToInject);
+
+
 }]);

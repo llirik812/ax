@@ -1,0 +1,73 @@
+<h2>Angular</h2>
+
+<div>
+    <span class="subtitle">Фильтрация идет по всем полям записей в массиве (непонятно, как работает ng-trim):</span>
+</div>
+
+<hr /> <!---------------------------------------->
+
+<div class="title">Filter:
+    <form name="myForm">
+        <input type="text" ng-model="input1.filter" ng-pattern="input1.pattern" ng-trim="false" ng-maxlength="10" ng-change="input1.onChange()"/>
+    </form>
+</div>
+
+<div>Is invalid: {{myForm.$invalid}}</div>
+
+<!-- Пока не работает -->
+<span>Select search type:</span>
+<select ng-model="input1.option">
+    <option value="name">name</option>
+    <option value="surname">surname</option>
+</select>
+
+<hr /> <!---------------------------------------->
+
+<div>
+    <span class="subtitle">Введенное в input поле значение:</span>
+    <span style="background: cyan;">{{input1.filter}}</span>
+</div>
+
+<span class="subtitle br">Значения по фильтру из массива:</span>
+
+<div ng-repeat="entry in arr | filter : input1.filter">
+    <span>{{entry.name}}</span>, <span>{{entry.surname}}</span>
+</div>
+
+<div><span class="subtitle">Init variable (ng-init):</span> {{initVar}}</div>
+<div><span class="subtitle">Counter of changes:</span> {{input1.changeCounter}}</div>
+
+<hr /> <!------------------------------------------------------->
+
+<div>
+    <span class="subtitle">Пробуем использовать angular expressions для массивов:</span>
+</div>
+
+<span ng-repeat="i in [1,0,2,3,4,7]">{{i}}</span>
+
+<hr /> <!------------------------------------------------------->
+
+<div>
+    <span class="subtitle">Используем возможности сортировки:</span>
+</div>
+
+<div ng-repeat="i in sorting | orderBy: '+key' : false">{{i.key}} - {{i.value}}</div>
+
+<hr /> <!------------------------------------------------------->
+
+<div>
+    <span class="subtitle">Пробуем использовать angular expressions для массивов:</span>
+</div>
+
+<hr /> <!---------------- ngBindTemplate --------------------------->
+
+<div>
+    <span class="subtitle">Пробуем использовать ng-bind-template:</span>
+</div>
+<div>
+    <span ng-bind-template="{{text1}}"></span>
+</div>
+
+<hr /> <!---------------- Новый способ создания контроллера --------------------------->
+
+<div ng-controller="anotherController" ng-init="initVar = 9999" />
