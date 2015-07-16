@@ -1,5 +1,8 @@
 "use strict";
-testApp.controller("testAppCtrl", ['$scope', '$http', function($scope, $http){
+
+testApp.controller("testAppCtrl", ['$scope', '$http', 'firstService1',  'firstService2', 'firstLogService', 'secondService1', 'secondService2',  'secondLogService',
+
+function($scope, $http, firstService1, firstService2, firstLogService, secondService1, secondService2, secondLogService){
     $scope.showMessage = function(){
         alert("This is a message");
     };
@@ -50,4 +53,14 @@ testApp.controller("testAppCtrl", ['$scope', '$http', function($scope, $http){
 
     /* -------- переменная для ng-bint-template ---------- */
     $scope.text1 = "variable for template";
+
+    /* ------- Создаем и тестируем сервисы ---------------*/
+
+    firstService1.log('Using service number 1');
+    firstService2.log('Using service number 2');
+    firstLogService('Using service number 3');
+
+    secondService1('Using service number 1');
+    secondService2('Using service number 2');
+    secondLogService('Using service number 3');
 }]);
