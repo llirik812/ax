@@ -72,6 +72,7 @@ testApp.provider('greeting', function() {
 });
 
 testApp.constant('greetingText', 'Howdy there, ');
+testApp.constant('greetingName', 'Kirill !');
 
 /* ----- There are two phases while starting angular App: config, run ----- */
 // setting additional code to this phases
@@ -86,7 +87,7 @@ testApp.config(function(greetingProvider, greetingText){
     */
     //greetingProvider.$get("Irina !");
 });
-testApp.run(function(greeting){
+testApp.run(function(greeting, greetingName){
     console.log('Additional run section works');
-    greeting("Kirill !");
+    greeting(greetingName);
 });
