@@ -55,3 +55,13 @@ testApp.factory('secondService2', function(){
 testApp.value('secondLogService', function(str){
     console.log(stringToWay2 + str);
 });
+
+
+/* ----- There are two phases while starting angular App: config, run ----- */
+// setting additional code to this phases
+testApp.config(function(){
+    console.log('Additional config section works');
+});
+testApp.run(function(){
+    console.log('Additional run section works');
+});
