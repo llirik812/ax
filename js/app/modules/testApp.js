@@ -1,5 +1,5 @@
 "use strict";
-angular.module('testApp', ['routeApp']);
+angular.module('testApp', ['routeApp' ,'testAppFilters']);
 
 angular.module('testApp').config(['$provide', function($provide){
 

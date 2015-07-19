@@ -1,1 +1,1 @@
-//angular.module('routeApp').directive();
+angular.module('routeApp').directive();

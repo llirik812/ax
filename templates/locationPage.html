@@ -1,11 +1,11 @@
 <div class="location page">
     <b class="word">$location</b><br/>
-    Location.path() = {{$location.path()}}<br/>
-    Location.url() = {{$location.url()}}<br/>
-    Location.hash() = {{$location.hash()}}<br/>
-    Location.search() = {{$location.search()}} - показывает get параметры<br/>
-    Location.absUrl() = {{$location.absUrl()}}<br/>
-    Location.host() = {{$location.host()}}<br/>
-    Location.port() = {{$location.port()}}<br/>
-    Location.protocol() = {{$location.protocol()}}<br/>
+    Location.path() = <span ng-bind-html="$location.path() | colorFilter"></span><br/>
+    Location.url() = <span ng-bind-html="$location.url() | colorFilter"></span><br/>
+    Location.hash() = <span ng-bind-html="$location.hash() | colorFilter"></span><br/>
+    Location.search() = <span ng-bind-html="$location.search() | colorFilter"></span> - показывает GET параметры<br/>
+    Location.absUrl() = <span ng-bind-html="$location.absUrl() | colorFilter"></span><br/>
+    Location.host() = <span ng-bind-html="$location.host() | colorFilter"></span><br/>
+    Location.port() = <span ng-bind-html="$location.port() | colorFilter"></span><br/>
+    Location.protocol() = <span ng-bind-html="$location.protocol() | colorFilter"></span><br/>
 </div>
