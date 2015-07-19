@@ -1,11 +1,7 @@
 "use strict";
 angular.module('testApp', ['routeApp']);
 
-angular.module('testApp').config(['$provide', '$locationProvider', function($provide, $locationProvider){
-    /**
-     * Configuring $locationProvider
-     */
-    $locationProvider.html5Mode(true).hashPrefix('!');
+angular.module('testApp').config(['$provide', function($provide){
 
     $provide.provider('firstService1', function(){
         this.$get = function(){

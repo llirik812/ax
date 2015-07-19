@@ -1,10 +1,10 @@
-angular.module('routeApp').controller('template1Controller', ['$scope', function($scope){
+angular.module('routeApp').controller('locationController', ['$scope', '$location', function($scope, $location){
     "use strict";
 
-   $scope.message = "Cool";
+    $scope.$location = $location;
 }]);
 
-angular.module('routeApp').controller('template2Controller', ['$scope', function($scope){
+angular.module('routeApp').controller('directiveController', ['$scope', function($scope){
     "use strict";
 
     $scope.message = "Static";

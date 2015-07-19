@@ -6,12 +6,8 @@ function functionToInject(firstService1){
 
 angular.module('testApp').controller("testAppCtrl", ['$scope', '$injector', '$http',
     'firstService1',  'firstService2', 'firstLogService', 'secondService1', 'secondService2',  'secondLogService',
-    '$location',
 function($scope, $injector, $http,
-         firstService1, firstService2, firstLogService, secondService1, secondService2, secondLogService,
-         $location){
-
-    $scope.$location = $location;
+         firstService1, firstService2, firstLogService, secondService1, secondService2, secondLogService){
 
     $scope.showMessage = function(){
         alert("This is a message");

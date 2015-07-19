@@ -10,8 +10,8 @@
     <script src="/js/app/controllers/route/templateControllers.js"></script>
     <script src="/js/app/modules/testApp.js"></script>
     <script src="/js/app/controllers/testAppCtrl.js"></script>
+    <script src="/js/app/controllers/anotherController.js"></script>
     <script src="/js/app/strict/test.js"></script>
-    <base href="/">
     <style>
         .title{
             font-weight: bold;
@@ -26,13 +26,13 @@
             padding: 10px;
             text-decoration: none;
         }
-        .first {
+        .location {
             background: #800000;
             color: white;
         }
-        .second {
+        .directive {
             background: gold;
-            color: black;
+            color: white;
         }
         .third {
             background: darkblue;
@@ -41,15 +41,8 @@
         .page {
             padding: 30px;
         }
-        .word {
+        .page .word {
             font-size: 30px;
-        }
-        .info {
-            margin: 5px 0 20px;
-            width: 100%;
-            background: rosybrown;
-            color: white;
-            padding: 4px;
         }
     </style>
 </head>
@@ -57,15 +50,11 @@
 <body ng-app="testApp" ng-controller="testAppCtrl" >
     <div class="divs">
         <a href="#/" style="background: red;">Root page</a>
-        <a href="#first" class="first">Home page</a>
-        <a href="#second" class="second">Second page</a>
+        <a href="#location" class="location">$location</a>
+        <a href="#directive" class="directive">Use directive</a>
         <a href="#third" class="third">Third page</a>
     </div>
-    <div class="info">
-        Location.path() = {{$location.path()}}<br/>
-        Location.path() = {{$location.path()}}<br/>
-        Location.path() = {{$location.path()}}<br/>
-    </div>
+
     <div ng-init="initVar = 999">
         <div ng-view></div>
     </div>
