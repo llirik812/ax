@@ -15,6 +15,9 @@ angular.module('routeApp').config(['$routeProvider', '$locationProvider', functi
     }).when('/directive', {
         templateUrl : '/templates/directivePage.html',
         controller : 'directiveController'
+    }).when('/routeParams/:name/:surname/:age', {
+        templateUrl : '/templates/routeParamsPage.html',
+        controller : 'routeParamsController'
     }).when('/third', {
         templateUrl : '/templates/template3.html',
         controller : 'template3Controller'
