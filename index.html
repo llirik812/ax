@@ -11,6 +11,7 @@
     <script src="/js/app/modules/testApp.js"></script>
     <script src="/js/app/controllers/testAppCtrl.js"></script>
     <script src="/js/app/strict/test.js"></script>
+    <base href="/">
     <style>
         .title{
             font-weight: bold;
@@ -43,17 +44,29 @@
         .word {
             font-size: 30px;
         }
+        .info {
+            margin: 5px 0 20px;
+            width: 100%;
+            background: rosybrown;
+            color: white;
+            padding: 4px;
+        }
     </style>
 </head>
 
-<body ng-app="testApp">
-    <div style="margin-bottom: 20px;" class="divs">
+<body ng-app="testApp" ng-controller="testAppCtrl" >
+    <div class="divs">
         <a href="#/" style="background: red;">Root page</a>
         <a href="#first" class="first">Home page</a>
         <a href="#second" class="second">Second page</a>
         <a href="#third" class="third">Third page</a>
     </div>
-    <div ng-controller="testAppCtrl" ng-init="initVar = 999">
+    <div class="info">
+        Location.path() = {{$location.path()}}<br/>
+        Location.path() = {{$location.path()}}<br/>
+        Location.path() = {{$location.path()}}<br/>
+    </div>
+    <div ng-init="initVar = 999">
         <div ng-view></div>
     </div>
 

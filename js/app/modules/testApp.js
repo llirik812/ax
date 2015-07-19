@@ -1,7 +1,11 @@
 "use strict";
 angular.module('testApp', ['routeApp']);
 
-angular.module('testApp').config(['$provide',function($provide){
+angular.module('testApp').config(['$provide', '$locationProvider', function($provide, $locationProvider){
+    /**
+     * Configuring $locationProvider
+     */
+    $locationProvider.html5Mode(true).hashPrefix('!');
 
     $provide.provider('firstService1', function(){
         this.$get = function(){
@@ -71,6 +75,7 @@ angular.module('testApp').provider('greeting', function() {
     };
 });
 
+// constant - works in config and controller phase
 angular.module('testApp').constant('greetingText', 'Howdy there, ');
 angular.module('testApp').constant('greetingName', 'Kirill !');
 
