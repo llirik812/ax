@@ -7,6 +7,8 @@ angular.module('routeApp').controller('locationController', ['$scope', '$locatio
 angular.module('routeApp').controller('directiveController', ['$scope', '$routeParams', function($scope, $routeParams){
     "use strict";
 
+    $scope.template = $routeParams.name;
+
     $scope.name = $routeParams.name;
 }]);
 

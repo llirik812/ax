@@ -1,4 +1,24 @@
 <div class="directive page">
-    <b class="word">Probation of directive using</b><br/>
-    <div simple-directive></div>
+    <div style="margin-bottom: 20px;">
+        <b class="word">Probation of directive using</b>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6 col-md-3">
+                <a class="my-directive-link" href="#directive/simple">simple</a>
+                <a class="my-directive-link" href="#directive/error">none</a>
+            </div>
+            <div class="col-xs-6 col-md-9">
+                <div ng-switch="template">
+                    <!--Simple directive-->
+                    <div ng-switch-when="simple">
+                        <div simple-directive></div>
+                    </div>
+
+                    <div ng-switch-default>Error! No such directive ...</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
