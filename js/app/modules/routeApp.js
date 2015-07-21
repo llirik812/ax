@@ -12,7 +12,7 @@ angular.module('routeApp').config(['$routeProvider', '$locationProvider', functi
     }).when('/location', {
        templateUrl : '/templates/locationPage.html',
        controller : 'locationController'
-    }).when('/directive', {
+    }).when('/directive/:name', {
         templateUrl : '/templates/directivePage.html',
         controller : 'directiveController'
     }).when('/routeParams/:name/:surname/:age', {

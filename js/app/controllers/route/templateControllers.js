@@ -4,10 +4,10 @@ angular.module('routeApp').controller('locationController', ['$scope', '$locatio
     $scope.$location = $location;
 }]);
 
-angular.module('routeApp').controller('directiveController', ['$scope', function($scope){
+angular.module('routeApp').controller('directiveController', ['$scope', '$routeParams', function($scope, $routeParams){
     "use strict";
 
-    $scope.message = "Static";
+    $scope.name = $routeParams.name;
 }]);
 
 angular.module('routeApp').controller('routeParamsController', ['$scope', '$routeParams', function($scope, $routeParams){

@@ -15,5 +15,4 @@ angular.module('testAppFilters', []).filter('colorFilter', function($sce){
         var markUp = $sce.trustAsHtml('<span style="color: #' + leftPad((Math.floor(Math.random() * 16777215)).toString(16), 6) + ' !important">' + input + '</span>');
         return markUp;
     }
-
 });
