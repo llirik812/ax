@@ -15,7 +15,7 @@
     color: white;
 }
 .directive {
-    background: gold;
+    background: rgba(255, 215, 0, 0.25);
     color: white;
 }
 .routeParams {
