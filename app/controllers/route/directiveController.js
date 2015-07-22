@@ -20,5 +20,5 @@ angular.module('routeApp').controller('directiveController', ['$scope', '$routeP
 
     // Данные переменные мы будем использовать для для директивы отображающей время
     $scope.timeString = 'Current time is ';
-
+    $scope.format = 'M/d/yy h:mm:ss a';
 }]);

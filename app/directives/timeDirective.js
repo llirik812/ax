@@ -1,18 +1,21 @@
-angular.module('routeApp').directive('time', function(){
+angular.module('routeApp').directive('time', ['$interval', 'dateFilter', function($interval, dateFilter){
     "use strict";
+
+    /**
+     * @param scope - передаем scope из контроллера
+     * @param element - передаем элемент, который содержит директиву
+     * @param attr - передаем hash объект, содержащий стрибуты из элемента
+     */
+    function link(scope, element, attr) {
+        var format,
+            timeoutId;
+
+        element.text(attr.local + scope.timeString + dateFilter(new Date(), scope.format));
+    }
+
     return {
         restrict : 'A',
-        /**
-         * @param scope - передаем scope из контроллера
-         * @param element - передаем элемент, который содержит директиву
-         * @param attr - передаем hash объект, содержащий стрибуты из элемента
-         */
-        link : function(scope, element, attr) {
-            alert(scope.timeString);
-            alert(element.get(0).tagName);
-            alert(attr.local);
-
-        },
+        link : link,
         templateUrl : '/pages/directives/timeDirectiveTemplate.html'
     }
-});
+}]);
