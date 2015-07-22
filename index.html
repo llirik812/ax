@@ -8,7 +8,11 @@
     <script src="/js/angular-route.js"></script>
     <script src="/app/filters/filters.js"></script>
     <script src="/app/modules/routeApp.js"></script>
-    <script src="/app/controllers/route/templateControllers.js"></script>
+
+    <script src="/app/controllers/route/directiveController.js"></script>
+    <script src="/app/controllers/route/locationController.js"></script>
+    <script src="/app/controllers/route/routeParamsController.js"></script>
+
     <script src="/app/modules/testApp.js"></script>
     <script src="/app/controllers/testAppCtrl.js"></script>
     <script src="/app/controllers/anotherController.js"></script>
@@ -27,7 +31,6 @@
         <a href="#location" class="location">$location</a>
         <a href="#routeParams/Kirill/Osokin/35" class="routeParams">Route parameters</a>
         <a href="#directive/simple" class="directive">Use directive</a>
-        <a href="#third" class="third">Third page</a>
     </div>
 
     <div ng-init="initVar = 999">

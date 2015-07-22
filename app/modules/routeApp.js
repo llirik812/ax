@@ -7,19 +7,16 @@ angular.module('routeApp').config(['$routeProvider', '$locationProvider', functi
     $locationProvider.html5Mode(false).hashPrefix('');
 
     $routeProvider.when('/', {
-        templateUrl : '/templates/rootPage.html',
+        templateUrl : '/pages/rootPage.html',
         controller : 'testAppCtrl'
     }).when('/location', {
-       templateUrl : '/templates/locationPage.html',
+       templateUrl : '/pages/locationPage.html',
        controller : 'locationController'
     }).when('/directive/:name', {
-        templateUrl : '/templates/directivePage.html',
+        templateUrl : '/pages/directivePage.html',
         controller : 'directiveController'
     }).when('/routeParams/:name/:surname/:age', {
-        templateUrl : '/templates/routeParamsPage.html',
+        templateUrl : '/pages/routeParamsPage.html',
         controller : 'routeParamsController'
-    }).when('/third', {
-        templateUrl : '/templates/template3.html',
-        controller : 'template3Controller'
     });
 }]);

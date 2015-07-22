@@ -8,7 +8,6 @@
             <div class="col-xs-6 col-md-3">
                 <a class="my-directive-link" href="#directive/simple">simple</a>
                 <a class="my-directive-link" href="#directive/template_function">template_function</a>
-                <a class="my-directive-link" href="#directive/error">none</a>
             </div>
 
             <!-- Directive using block -->
@@ -20,7 +19,7 @@
                     </div>
 
                     <div ng-switch-when="template_function">
-                        <div template-function my-attr="Kirill"></div>
+                        <div template-function my-attr="{{variable}}"></div>
                     </div>
 
                     <div ng-switch-default>Error! No such directive ...</div>
