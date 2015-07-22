@@ -18,4 +18,7 @@ angular.module('routeApp').controller('directiveController', ['$scope', '$routeP
         return 'My SISTER !!';
     }};
 
+    // Данные переменные мы будем использовать для для директивы отображающей время
+    $scope.timeString = 'Current time is ';
+
 }]);

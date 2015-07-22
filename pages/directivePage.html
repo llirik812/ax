@@ -10,6 +10,7 @@
                 <a class="my-directive-link" href="#directive/template_function">template_function</a>
                 <a class="my-directive-link" href="#directive/restricts">restricts</a>
                 <a class="my-directive-link" href="#directive/scope">scope</a>
+                <a class="my-directive-link" href="#directive/time">time</a>
             </div>
 
             <!-- Directive using block -->
@@ -33,6 +34,10 @@
                     <div ng-switch-when="scope">
                         <div scope info="me"></div>
                         <div scope info="sister" variable="sister"></div>
+                    </div>
+
+                    <div ng-switch-when="time">
+                        <div time local="(SPB)"></div>
                     </div>
 
                     <div ng-switch-default>Error! No such directive ...</div>
