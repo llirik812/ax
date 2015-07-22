@@ -4,6 +4,10 @@ angular.module('routeApp').controller('locationController', ['$scope', '$locatio
     $scope.$location = $location;
 }]);
 
+/**
+ * ------------------------ directives ---------------------------------
+ */
+
 angular.module('routeApp').controller('directiveController', ['$scope', '$routeParams', function($scope, $routeParams){
     "use strict";
 
@@ -12,6 +16,10 @@ angular.module('routeApp').controller('directiveController', ['$scope', '$routeP
     $scope.name = $routeParams.name;
 }]);
 
+/**
+ * ------------------------ route parameters---------------------------------
+ */
+
 angular.module('routeApp').controller('routeParamsController', ['$scope', '$routeParams', function($scope, $routeParams){
     "use strict";
 
@@ -19,6 +27,10 @@ angular.module('routeApp').controller('routeParamsController', ['$scope', '$rout
     $scope.surnameParam = $routeParams.surname;
     $scope.ageParam = $routeParams.age;
 }]);
+
+/**
+ * ------------------------ not used ---------------------------------
+ */
 
 angular.module('routeApp').controller('template3Controller', ['$scope', function($scope){
     "use strict";
