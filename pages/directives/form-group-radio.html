@@ -1,0 +1,14 @@
+<div class="form-group--radio" ng-class="{'form-group--radio--focused' : focused, 'form-group--radio--selected': sjFormGroupRadioScope, 'disabled' : sjFormGroupRadioDisabled }">
+    <div class="form-group--radio-face">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             x="0px" y="0px" width="25px" height="25px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+
+            <path d="M 32 61.260000000000005 A 29.26 29.26 0 0 0 32 2.7399999999999984 M 32 8.739999999999998 A 23.26 23.26 0 0 1 32 55.260000000000005 M 31.999999999999993 61.260000000000005 A 29.26 29.26 0 0 1 32 2.7399999999999984 M 32 8.739999999999998 A 23.26 23.26 0 0 0 31.999999999999996 55.260000000000005" ng-if="!sjFormGroupRadioScope || sjFormGroupRadioDisabled" fill="#afafaf"/>
+            <path d="M 32 61.260000000000005 A 29.26 29.26 0 0 0 32 2.7399999999999984 M 32 8.739999999999998 A 23.26 23.26 0 0 1 32 55.260000000000005 M 31.999999999999993 61.260000000000005 A 29.26 29.26 0 0 1 32 2.7399999999999984 M 32 8.739999999999998 A 23.26 23.26 0 0 0 31.999999999999996 55.260000000000005" ng-if="!sjFormGroupRadioDisabled && (sjFormGroupRadioScope || hovered)" fill="#0081a2"/>
+            <ellipse ng-if="sjFormGroupRadioScope && !sjFormGroupRadioScope" fill="#afafaf" cx="32" cy="32" rx="15" ry="15"/>
+            <ellipse ng-if="sjFormGroupRadioScope && sjFormGroupRadioScope" fill="#0081a2" cx="32" cy="32" rx="15" ry="15"/>
+        </svg>
+    </div>
+    <div ng-transclude></div>
+</div>
+

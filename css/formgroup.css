@@ -1,0 +1,925 @@
+/*! ui/blocks/form-group */
+/* Note! Never use site specific variables in component CSS, components must be public */
+/*  This is where we specify our color palette. All colors used on the site should refer to these variables.
+
+    All colors and use cases defined here should map what is defined on Confluence.
+    Color Palette: https://confluence.sj.se/display/SWP/Color+Palette
+    Pattern Library: https://confluence.sj.se/pages/viewpage.action?pageId=18449014
+
+    We have two "abstraction layers" for color usage:
+    Layer 1: The actual color palette. Examples: Raspberry Pink, Jungle Green, Denim Blue.
+    Layer 2: Generic use cases. Examples: Purchase, Interactive, Primary Text.
+
+    IMPORTANT
+      Primarily use the abstractions in Layer 2, with a fallback to Layer 1 if no use case in Layer 2 is applicable.
+*/
+/* LAYER 1: THE COLOR PALETTE */
+/* PLEASE NOTE: Only refer to these if no use case from Layer 2 is applicable. */
+/* LAYER 2: USE CASES */
+/* Primary actions, buttons, links and interactive elements. */
+/* Everything related to purchase, like prices, order confirmation buttons etc. */
+/* For highlighting purposes, like important information and errors. */
+/* Background colors. */
+/* Primary text on standard and dark background respectively. */
+/* Secondary text on various backgrounds. */
+/*
+ *
+ * Fonts, font sizes, etc
+ *
+ */
+/*1.5*/
+/*@h1-size-xs: 27px;*/
+/*@h1-size-sm: 34px;*/
+/*@h1-size-md: 36px;*/
+/*@h1-size-lg: 36px;*/
+/*@h2-size-xs: 21px;*/
+/*@h2-size-sm: 24px;*/
+/*@h2-size-md: 26px;*/
+/*@h2-size-lg: 26px;*/
+/*@h3-size-lg: @h2-size-lg;*/
+/*@h3-size-md: @h2-size-md;*/
+/*@h3-size-sm: @h2-size-sm;*/
+/*@h3-size-xs: @h2-size-xs;*/
+/*@h4-size-lg: @h2-size-lg;*/
+/*@h4-size-md: @h2-size-md;*/
+/*@h4-size-sm: @h2-size-sm;*/
+/*@h4-size-xs: @h2-size-xs;*/
+/**
+ *
+ * Transition variables
+ *
+ */
+/**
+ *
+ * Bootstrap specific
+ *
+ */
+/**
+ *
+ * End Bootstrap specific
+ *
+ */
+/*! generic/mixins */
+/*! generic/lesshat */
+/**
+ * font-size
+ * Calculate a font-size in both pixels and REMs from a given font size
+ * and the HTML's font size.
+ */
+/**
+ * line-height
+ * Calculate a fitting line-height for a font-size from a given
+ * font size and the base line height.
+ *
+ * http://jsfiddle.net/redclover/mkYtY/
+ */
+/**
+ * rhythmic-size
+ * Calculate a typograph-rhythmically correct font-size and line-height
+ */
+/**
+ *
+ * Font style type mixins
+ *
+ */
+/* H1 Base mixin, don't use this, use one of the alternative header mixins below */
+/* H1 alt 1 - bold */
+/* H1 alt 2 - normal */
+/* H2 Base mixin, don't use this, use one of the alternative header mixins below */
+/* H2 alt 1 - bold */
+/* H2 alt 2 - normal */
+/* Form input */
+/* form input large */
+/* form input label */
+/*@milli-size;*/
+/*@milli-size;*/
+/* Font regular (brödtext) */
+/* font regular (brödtext) small */
+/* Font descriptions */
+/* Font meny primary */
+/* Font menu secondary */
+/*! generic/clearfix */
+.cf:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.form-group {
+  position: relative;
+  /**
+   * &__plain removes special stylings that may be unwanted
+   */
+}
+.form-group__divider {
+  border-top: 1px solid #d1d1d1;
+  border-bottom: 1px solid #d1d1d1;
+  margin-bottom: 15px;
+}
+.form-group__divider--first {
+  padding: 16px 0px;
+  font-size: 14px;
+}
+@media (min-width: 760px) {
+  .form-group__divider--first {
+    padding: 14px 0px;
+    font-size: 16px;
+  }
+}
+.form-group__divider--second {
+  padding: 5px 0px;
+}
+@media (min-width: 760px) {
+  .form-group__divider--second {
+    padding: 10px 0px;
+  }
+}
+.form-group__divider--third {
+  padding: 18px 0;
+}
+@media (min-width: 760px) {
+  .form-group__divider--third {
+    padding: 23px 0;
+  }
+}
+.form-group__divider:after {
+  clear: both;
+  content: '';
+}
+.form-group--passenger-list {
+  margin-bottom: 40px;
+}
+@media (min-width: 760px) {
+  .form-group--passenger-list {
+    margin-bottom: 20px;
+  }
+}
+.form-group--passenger-list div li {
+  margin-top: 20px;
+}
+@media (min-width: 760px) {
+  .form-group--passenger-list div li {
+    margin-top: 0;
+  }
+}
+.form-group--passenger-list div:first-child li {
+  margin-top: 0;
+}
+.form-group--label,
+.form-group--field {
+  max-width: 100%;
+}
+.form-group--label {
+  display: inline-block;
+  line-height: 20px;
+  padding-bottom: 5px;
+  font-size: 11px;
+  font-weight: bold;
+}
+@media (min-width: 760px) {
+  .form-group--label {
+    font-size: 12px;
+  }
+}
+.form-group--label-optional {
+  color: #818181;
+}
+.form-group--label__animated span {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 5px, 0);
+  -moz-transform: translate3d(0, 5px, 0);
+  -o-transform: translate3d(0, 5px, 0);
+  -ms-transform: translate3d(0, 5px, 0);
+  transform: translate3d(0, 5px, 0);
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -o-transition-property: -o-transform, opacity;
+  transition-property: -webkit-transform,-moz-transform,-o-transform,transform, opacity;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  -moz-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  -o-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+}
+.form-group--label__animated-visible span {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.form-group--field__with-label .form-group--label {
+  line-height: 1;
+  padding: 0 20px;
+  padding-bottom: 0;
+}
+.form-group--field__with-label .form-group--label__animated {
+  font-size: 0.5em;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 3px, 0);
+  -moz-transform: translate3d(0, 3px, 0);
+  -o-transform: translate3d(0, 3px, 0);
+  -ms-transform: translate3d(0, 3px, 0);
+  transform: translate3d(0, 3px, 0);
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -o-transition-property: -o-transform, opacity;
+  transition-property: -webkit-transform,-moz-transform,-o-transform,transform, opacity;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  -moz-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  -o-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+}
+.form-group--field__with-label .form-group--label__visible {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.form-group--field {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #ffffff;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  -moz-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  -o-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+}
+@media (min-width: 760px) {
+  .form-group--field {
+    font-size: 18px;
+  }
+}
+.form-group--field.disabled {
+  background-color: #dddddd;
+  color: #818181;
+  -webkit-box-shadow: 0 0 0px 100px #dddddd inset;
+  cursor: default;
+}
+.form-group--field.disabled input:disabled,
+.form-group--field.disabled select:disabled {
+  background-color: #dddddd;
+  -webkit-box-shadow: 0 0 0px 100px #dddddd inset;
+  color: #818181;
+  cursor: default;
+}
+.form-group--field:after {
+  content: '';
+  width: 100%;
+  height: 0px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: height 0.15s linear;
+  -moz-transition: height 0.15s linear;
+  -o-transition: height 0.15s linear;
+  transition: height 0.15s linear;
+}
+.form-group--field__error:after {
+  background: #d01778 !important;
+  height: 3px;
+}
+.form-group--field__focus:after {
+  background: #0081a2;
+  height: 3px;
+}
+.form-group--field__hide-state:after {
+  height: 0px;
+}
+.form-group--field__small {
+  font-size: 0.9em;
+  height: 40px;
+  line-height: 40px;
+  padding: 5px 10px;
+}
+.form-group--field__multi {
+  height: auto;
+  background-color: transparent;
+  padding: 0;
+}
+.form-group--field__with-label {
+  line-height: 1;
+  height: auto;
+  padding: 20px 0;
+}
+.form-group--field__with-label:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.form-group--field__with-animated-label {
+  padding: 0 0 5px 0;
+}
+.form-group--field__bordered {
+  border-color: #dddddd;
+  height: 62px;
+  line-height: 62px;
+}
+.form-group--field-transparent {
+  background-color: transparent;
+}
+.form-group--field__bordered-bottom {
+  border-bottom: 2px solid #dddddd;
+}
+.form-group--field__bordered-bottom.form-group--field__focus {
+  border-bottom: 0;
+}
+.form-group--input {
+  -webkit-appearance: none;
+  border-radius: 0;
+  -webkit-box-shadow: 0 0 0px 100px #ffffff inset;
+  height: 50px;
+  line-height: 40px;
+}
+.form-group--input.disabled {
+  background-color: #dddddd;
+  -webkit-box-shadow: 0 0 0px 100px #dddddd inset;
+}
+.form-group--input--search {
+  cursor: pointer;
+  position: relative;
+  bottom: 3px;
+}
+.form-group--input:invalid {
+  box-shadow: none;
+  -webkit-box-shadow: 0 0 0px 100px #ffffff inset;
+}
+.form-group--input::-webkit-input-placeholder {
+  font-weight: normal;
+}
+.form-group--input:-moz-placeholder {
+  font-weight: normal;
+}
+.form-group--input::-moz-placeholder {
+  font-weight: normal;
+}
+.form-group--input:-ms-input-placeholder {
+  font-weight: normal;
+}
+.form-group--input__italic-placeholder::-webkit-input-placeholder {
+  font-style: italic;
+}
+.form-group--input__italic-placeholder:-moz-placeholder {
+  font-style: italic;
+}
+.form-group--input__italic-placeholder::-moz-placeholder {
+  font-style: italic;
+}
+.form-group--input__italic-placeholder:-ms-input-placeholder {
+  font-style: italic;
+}
+.form-group--field.form-group--input {
+  height: 50px;
+  line-height: 30px;
+  padding: 10px 20px;
+}
+.form-group--field .form-group--input {
+  padding-left: 0;
+  padding-right: 0;
+}
+.form-group__field-container .form-group--field {
+  padding: 0 20px 0 20px;
+}
+.form-group--double-field-separator {
+  padding: 0;
+  text-align: center;
+}
+.form-group__has-action-button .form-group--field {
+  padding: 0 60px 0 20px;
+}
+.form-group__has-action-button .form-group--field__with-label {
+  padding: 10px 0;
+}
+.form-group__has-action-button .form-group--field__with-animated-label {
+  padding: 0 0 5px 0;
+}
+.form-group--multi-field-cell {
+  background: white;
+}
+@media (min-width: 760px) {
+  .form-group--multi-field-cell {
+    border-left: 1px solid #dddddd;
+  }
+}
+.form-group--info {
+  font-size: inherit;
+  font-weight: normal;
+  height: auto;
+  line-height: 1.4;
+}
+.form-group--field__with-label .form-group--input {
+  padding: 0 20px;
+  line-height: 1.5;
+}
+.form-group--field__with-animated-label .form-group--input {
+  padding: 0 10px;
+}
+.form-group__no-bg {
+  background-color: transparent;
+}
+.form-group--button {
+  display: block;
+  padding: 0 10px;
+  /*
+        line-height: @form-gutter * 2.5;
+        height: @form-gutter * 2.5;
+    */
+}
+.form-group--button__small {
+  height: 40px;
+  line-height: 40px;
+}
+.form-group--button__small-square {
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.form-group--button--square,
+.form-group--button--trashcan {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 2px solid #dddddd;
+}
+.form-group--button--square:hover,
+.form-group--button--trashcan:hover,
+.form-group--button--square:focus,
+.form-group--button--trashcan:focus {
+  background-color: #f5f5f5;
+}
+.form-group--button--square:active,
+.form-group--button--trashcan:active {
+  background-color: #0081a2;
+}
+.form-group--button--square {
+  width: 50px;
+}
+.form-group--button--trashcan {
+  width: 100%;
+}
+.form-group--button--square.form-group--field__focus,
+.form-group--button--trashcan.form-group--field__focus {
+  border-bottom: 0;
+}
+.form-group--button__bordered {
+  /* Fix to get rid of black border in IE9 */
+  outline: none;
+}
+.form-group--button__bordered-left {
+  border-left: 2px solid #dddddd;
+}
+.form-group--button__bordered-right {
+  border-right: 2px solid #dddddd;
+}
+.form-group--button__bordered-bottom {
+  border-bottom: 2px solid #dddddd;
+}
+.form-group--button__bordered-bottom.form-group--field__focus {
+  border-bottom: 0;
+}
+.form-group--button__dotted {
+  border: 2px dotted #dddddd;
+}
+.form-group--button__margined-left {
+  margin-left: 2px;
+}
+.form-group--button__margined-right {
+  margin-right: 2px;
+}
+.form-group--radio-container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.form-group--radio {
+  line-height: 25px;
+  position: relative;
+  font-size: 12px;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition-property: background-color, color;
+  -moz-transition-property: background-color, color;
+  -o-transition-property: background-color, color;
+  transition-property: background-color, color;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  -moz-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  -o-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+}
+.form-group--radio--stacked {
+  margin-bottom: 14px;
+}
+.form-group--radio strong {
+  padding-right: 5px;
+}
+.form-group--radio--focused .form-group--radio-label--focused {
+  outline: 2px solid #0081a2;
+}
+.form-group--radio--sideways {
+  display: inline-block;
+  /*
+      margin-bottom: 14px;
+*/
+}
+.form-group--radio-input {
+  opacity: 0;
+  /* do NOT set this to visibility:hidden, needs to be found by screen readers */
+  margin-left: -15px;
+  cursor: pointer;
+  position: absolute;
+}
+.form-group--radio label {
+  position: relative;
+  cursor: pointer;
+  padding: 6px 7px 4px 0;
+}
+.form-group--radio-label {
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 30px;
+}
+.form-group--radio-face {
+  top: 1px;
+  left: 1px;
+  position: absolute;
+}
+.form-group--radio-face svg {
+  width: 22px;
+  height: 22px;
+}
+.form-group--radio.disabled svg circle {
+  stroke: #afafaf;
+}
+.form-group--radio.disabled svg ellipse {
+  fill: #afafaf;
+}
+.form-group--radio-active-visible {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  -moz-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  -o-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+}
+.form-group--radio__selected .form-group--radio-active-visible {
+  opacity: 1;
+}
+.form-group--checkbox {
+  /* old wrapper */
+  min-height: 22px;
+  position: relative;
+}
+.form-group--checkbox-face {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 0;
+  font-size: 0.8em;
+  padding: 0;
+  -webkit-transition-property: background-color, color;
+  -moz-transition-property: background-color, color;
+  -o-transition-property: background-color, color;
+  transition-property: background-color, color;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  -moz-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  -o-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  outline: solid 3px #afafaf;
+  cursor: pointer;
+}
+.form-group--checkbox-face svg {
+  width: 18px;
+  height: 18px;
+}
+.form-group--checkbox-face svg polyline {
+  stroke: #0081a2;
+}
+.form-group--checkbox--checked .form-group--checkbox-face {
+  outline: solid 3px #0081a2;
+}
+.form-group--checkbox--hovered .form-group--checkbox-face {
+  outline: solid 3px #0081a2;
+}
+.form-group--checkbox-bubbletarget {
+  /* IMPORTANT: This div needs to be unclickable BUT we need events from input/label to bubble up to it.
+       * Acheive this by making it fully visible but size 0*0px, also make sure it's positioned absolutely
+       * this is a screen readers fix.
+       */
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 3px;
+  /* same as width of outline */
+  left: 3px;
+  /* same as width of outline */
+}
+.form-group--checkbox-input {
+  opacity: 0;
+  /* do NOT set this to visibility:hidden, needs to be found by screen readers */
+}
+.form-group--checkbox-label {
+  /* make sure the label covers the complete SVG animated checkbox-face to make it clickable */
+  cursor: pointer;
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  padding: 6px 7px 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 14px;
+}
+.form-group--checkbox-label span {
+  padding: 0 0 0 35px;
+}
+.form-group--checkbox-label__large-text {
+  line-height: 20px;
+  font-weight: bold;
+}
+.form-group--checkbox--focused label {
+  outline: 2px solid #0081a2;
+}
+.form-group--checkbox.disabled {
+  color: #818181;
+}
+.form-group--checkbox.disabled .form-group--checkbox-face {
+  opacity: .5;
+  outline: solid 3px #afafaf;
+}
+.form-group--checkbox.disabled svg polyline {
+  stroke: #afafaf;
+}
+.form-group--field-action {
+  position: absolute;
+  bottom: 4px;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.form-group--field__small .form-group--field-action {
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+}
+.form-group__plain .form-group--field {
+  font-weight: normal;
+}
+.form-group__plain .form-group--label {
+  font-weight: normal;
+  font-size: inherit;
+}
+.form-group__highlight-field {
+  background-color: #ffffff;
+  padding-left: 11px;
+  padding-right: 11px;
+  border-bottom: 2px solid #ccc;
+}
+.form-group__highlight-field--clickable {
+  cursor: pointer;
+}
+.form-group__highlight-field__label {
+  font-size: 16px;
+}
+.form-group__highlight-field__description {
+  padding-left: 30px;
+  font-size: 14px;
+}
+.form-group__highlight-field__checkbox-container {
+  padding-top: 10px;
+  width: 70%;
+  float: left;
+}
+.form-group__highlight-field__text-container {
+  padding-top: 14px;
+}
+.form-group--select {
+  position: relative;
+  font-size: 16px;
+}
+@media (min-width: 760px) {
+  .form-group--select {
+    font-size: 18px;
+    letter-spacing: -0.02em;
+  }
+}
+.form-group--select:hover,
+.form-group--select:hover .form-group--select-face {
+  background-color: #f5f5f5;
+}
+.form-group--select:active,
+.form-group--select:active .form-group--select-face {
+  background-color: #222222;
+}
+.form-group--select-face,
+.form-group--select select {
+  position: absolute;
+  height: 50px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  letter-spacing: inherit;
+}
+.form-group--select--clock select {
+  height: 66px;
+}
+.form-group--select-face {
+  display: block;
+  padding: 0 20px;
+  background-color: #ffffff;
+}
+.form-group--select-face.disabled,
+.form-group--select-face select:disabled {
+  background-color: #dddddd;
+  color: #818181;
+  -webkit-box-shadow: 0 0 0px 100px #dddddd inset;
+  cursor: default;
+}
+.form-group--select-face--focused {
+  background-color: #f5f5f5;
+  outline: none;
+}
+.form-group--select-face--traveller {
+  border-bottom: 2px solid #dddddd;
+  padding: 10px 20px;
+}
+.form-group--select-face--traveller__passenger {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
+  top: 37%;
+}
+.form-group--select-face--traveller__passenger--icon {
+  fill: #afafaf;
+}
+.form-group--select-face--traveller .traveller-name {
+  font-size: 14px;
+  line-height: 20px;
+  padding-left: 30px;
+}
+@media (min-width: 760px) {
+  .form-group--select-face--traveller .traveller-name {
+    font-size: 16px;
+  }
+}
+.form-group--select-face--traveller .traveller-prio {
+  font-size: 12px;
+  line-height: 12px;
+  color: #afafaf;
+  padding-left: 30px;
+}
+.form-group--select-face--traveltype {
+  background-color: transparent;
+  height: 46px;
+}
+.form-group--select-face--traveltype .traveltype-icon-plus {
+  left: 20px;
+  position: absolute;
+  top: 0;
+  width: 18px;
+  height: 18px;
+}
+@media (max-width: 759px) {
+  .form-group--select-face--traveltype .traveltype-icon-plus {
+    top: 1px;
+  }
+}
+.form-group--select-face--traveltype .form-group--select-title {
+  padding-right: 0;
+  padding-left: 30px;
+  line-height: 46px;
+}
+.form-group--select-face--traveltype.form-group--select-face--focused {
+  background-color: #fff;
+}
+.form-group--select-face--default {
+  border-bottom: 2px solid #dddddd;
+}
+.form-group--select-face--clock {
+  padding: 0;
+  width: 100%;
+  height: 66px;
+  font-size: 15px;
+}
+@media (min-width: 760px) {
+  .form-group--select-face--clock {
+    font-size: 18px;
+  }
+}
+.form-group--select-face--clock .form-group--select-title {
+  margin-left: 15px;
+}
+.form-group--select-face--clock .sj-icon--clock {
+  left: 0px;
+}
+@media (min-width: 760px) {
+  .form-group--select-face--clock .sj-icon--clock {
+    left: -4px;
+  }
+}
+.form-group--select-face--clock__contentcontainer {
+  margin-left: 15px;
+  position: relative;
+  top: 15px;
+}
+@media (min-width: 1200px) {
+  .form-group--select-face--clock__contentcontainer {
+    margin-left: 23px;
+  }
+}
+.form-group--select-title {
+  display: block;
+  padding-right: 13.33333333px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.form-group--select__no-icon .form-group--select-icon {
+  display: none;
+}
+.form-group--select-icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 0.75em;
+}
+.form-group--select select {
+  opacity: 0;
+  /* do NOT set this to visibility:hidden, needs to be found by screen readers */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.form-group--field__multi .form-group--select {
+  padding: 20px;
+}
+.form-group__less-important {
+  background-color: rgba(245, 245, 245, 0.65);
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  -moz-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  -o-transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+  transition-timing-function: cubic-bezier(0.3, 0.55, 0.1, 0.9);
+}
+.form-group__less-important:active {
+  background-color: #f5f5f5;
+}
+.form-group__without-label {
+  padding-top: 50px;
+}
+/* background specials */
+.sj-background-color__white-background .form-group--checkbox.disabled {
+  color: #afafaf;
+}

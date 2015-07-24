@@ -1,4 +1,4 @@
-angular.module('routeApp', ['ngRoute']);
+angular.module('routeApp', ['ngRoute', 'ngTouch']);
 
 angular.module('routeApp').config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
     "use strict";
