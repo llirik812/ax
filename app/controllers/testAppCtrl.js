@@ -9,6 +9,12 @@ angular.module('testApp').controller("testAppCtrl", ['$scope', '$injector', '$ht
 function($scope, $injector, $http,
          firstService1, firstService2, firstLogService, secondService1, secondService2, secondLogService){
 
+    window.onpageshow = function(event){
+        $scope.$apply(function(){
+            window.alert(1);
+        });
+    };
+
     $scope.showMessage = function(){
         alert("This is a message");
     };
