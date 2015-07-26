@@ -128,7 +128,7 @@
                     </div>
 
                    <div ng-switch-when="expression_binding">
-                        <div expression_binding hide-function="hideDialog()" is-shown="isDialogMessageShown">
+                        <div expression_binding hide-function="hideDialog(message)" is-shown="isDialogMessageShown" close-message="closeMessage">
                             This is dialog message
                         </div>
                     </div>

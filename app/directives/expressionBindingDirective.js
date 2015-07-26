@@ -5,7 +5,8 @@ angular.module('routeApp').directive('expressionBinding', function() {
         restrict: 'A',
         scope: {
             hide : '&hideFunction',
-            isDialogMessageShown: '=isShown'
+            isDialogMessageShown: '=isShown',
+            closeMessage: '=closeMessage'
         },
         link: function(scope, element) {
 

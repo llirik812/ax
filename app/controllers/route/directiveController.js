@@ -61,7 +61,9 @@ angular.module('routeApp').controller('directiveController', ['$scope', '$timeou
 
     ////////////////////////////////// expressionBinding /////////////////////
 
-    $scope.hideDialog = function() {
+    $scope.closeMessage = 'sdsds';
+    $scope.hideDialog = function(message) {
+        $scope.closeMessage = message;
         $scope.isDialogMessageShown = false;
         $timeout(function() {
             $scope.isDialogMessageShown = true;
