@@ -15,6 +15,7 @@
                 <a class="my-directive-link" href="#directive/transclude">transclude</a>
                 <a class="my-directive-link" href="#directive/directive_scope_test">directive scope test</a>
                 <a class="my-directive-link" href="#directive/expression_binding">& - expression binding</a>
+                <a class="my-directive-link" href="#directive/draggable">draggable</a>
             </div>
 
             <!-- Directive using block -->
@@ -127,9 +128,15 @@
 
                     </div>
 
-                   <div ng-switch-when="expression_binding">
+                    <div ng-switch-when="expression_binding">
                         <div expression_binding hide-function="hideDialog(message)" is-shown="isDialogMessageShown" close-message="closeMessage">
                             This is dialog message
+                        </div>
+                    </div>
+
+                    <div ng-switch-when="draggable">
+                        <div draggable>
+                            Drag me to the place you ever wanted
                         </div>
                     </div>
 
