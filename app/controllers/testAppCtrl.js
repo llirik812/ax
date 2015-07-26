@@ -11,7 +11,7 @@ function($scope, $injector, $http,
 
     window.onpageshow = function(event){
         $scope.$apply(function(){
-            window.alert(1);
+            window.console.log('OnPageShow fired. Safari uses this when the page is loaded.');
         });
     };
 

@@ -1,6 +1,6 @@
 <div class="directive page">
     <div style="margin-bottom: 20px;">
-        <b class="word">Probation of directive using</b>
+        <b class="word">Probation of directive usage</b>
     </div>
 
     <div class="container-fluid">
@@ -12,6 +12,7 @@
                 <a class="my-directive-link" href="#directive/scope">scope</a>
                 <a class="my-directive-link" href="#directive/time">time</a>
                 <a class="my-directive-link" href="#directive/radio">radio</a>
+                <a class="my-directive-link" href="#directive/transclude">transclude</a>
             </div>
 
             <!-- Directive using block -->
@@ -98,6 +99,24 @@
 
                     </div>
 
+                    <div ng-switch-when="transclude">
+                        <div transclude-usage icon="1">
+                            <div>
+                                This is the warning message !
+                            </div>
+                            <div>
+                                {{description}}
+                            </div>
+                        </div>
+                        <div transclude-usage icon="2">
+                            <div>
+                                This is another warning message !
+                            </div>
+                            <div>
+                                {{description}}
+                            </div>
+                        </div>
+                    </div>
 
                     <div ng-switch-default>Error! No such directive ...</div>
                 </div>

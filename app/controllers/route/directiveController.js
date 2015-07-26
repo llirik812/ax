@@ -25,8 +25,8 @@ angular.module('routeApp').controller('directiveController', ['$scope', '$routeP
     $scope.destroy = function(){
         $element.find()
     };
-         ////////////////////////////////// checkbox //////////////////////
-     
+
+    ////////////////////////////////// checkbox //////////////////////
 
     $scope.personalDetails = {
       data : {
@@ -48,6 +48,8 @@ angular.module('routeApp').controller('directiveController', ['$scope', '$routeP
 
     $scope.x = 0;
 
-    ////////////////////////////////// checkbox //////////////////////
+    ////////////////////////////////// transclude //////////////////////
+
+    $scope.description = 'This popup window made by using the transclude option of directive.';
 
 }]);
