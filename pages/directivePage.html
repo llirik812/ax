@@ -13,6 +13,7 @@
                 <a class="my-directive-link" href="#directive/time">time</a>
                 <a class="my-directive-link" href="#directive/radio">radio</a>
                 <a class="my-directive-link" href="#directive/transclude">transclude</a>
+                <a class="my-directive-link" href="#directive/directive_scope_test">directive scope test</a>
             </div>
 
             <!-- Directive using block -->
@@ -116,6 +117,11 @@
                                 {{description}}
                             </div>
                         </div>
+                    </div>
+
+                    <div ng-switch-when="directive_scope_test">
+                        <directive-scope-test/>
+
                     </div>
 
                     <div ng-switch-default>Error! No such directive ...</div>

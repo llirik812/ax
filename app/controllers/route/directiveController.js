@@ -52,4 +52,10 @@ angular.module('routeApp').controller('directiveController', ['$scope', '$routeP
 
     $scope.description = 'This popup window made by using the transclude option of directive.';
 
+    ////////////////////////////////// directive scope //////////////////////
+
+    // определяем переменную в пространстве имен контроллера
+    $scope.directiveVar1 = "controller value 1";
+    $scope.directiveVar2 = "controller value 2";
+
 }]);
