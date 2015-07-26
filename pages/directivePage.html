@@ -14,6 +14,7 @@
                 <a class="my-directive-link" href="#directive/radio">radio</a>
                 <a class="my-directive-link" href="#directive/transclude">transclude</a>
                 <a class="my-directive-link" href="#directive/directive_scope_test">directive scope test</a>
+                <a class="my-directive-link" href="#directive/expression_binding">& - expression binding</a>
             </div>
 
             <!-- Directive using block -->
@@ -124,6 +125,12 @@
                             from body of directive. {{transcludeVar}}
                         </directive-scope-test>
 
+                    </div>
+
+                   <div ng-switch-when="expression_binding">
+                        <div expression_binding hide-function="hideDialog()" is-shown="isDialogMessageShown">
+                            This is dialog message
+                        </div>
                     </div>
 
                     <div ng-switch-default>Error! No such directive ...</div>

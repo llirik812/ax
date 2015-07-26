@@ -1,4 +1,4 @@
-angular.module('routeApp').controller('directiveController', ['$scope', '$routeParams', function($scope, $routeParams){
+angular.module('routeApp').controller('directiveController', ['$scope', '$timeout', '$routeParams', function($scope, $timeout, $routeParams){
     "use strict";
 
     $scope.template = $routeParams.name;
@@ -59,4 +59,14 @@ angular.module('routeApp').controller('directiveController', ['$scope', '$routeP
     $scope.directiveVar2 = 'controller value 2';
     $scope.transcludeVar = 'controller value';
 
+    ////////////////////////////////// expressionBinding /////////////////////
+
+    $scope.hideDialog = function() {
+        $scope.isDialogMessageShown = false;
+        $timeout(function() {
+            $scope.isDialogMessageShown = true;
+        }, 1000);
+    };
+
+    $scope.isDialogMessageShown = true;
 }]);
