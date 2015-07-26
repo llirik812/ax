@@ -7,6 +7,9 @@ angular.module('testApp').directive('transcludeUsage', function() {
             icon : '='
         },
         transclude: true,
-        templateUrl : '/pages/directives/transcludeDirectiveTemplate.html'
+        templateUrl : '/pages/directives/transcludeDirectiveTemplate.html',
+        link : function(scope, element) {
+            scope.nameTr = "Kirill";
+        }
     }
 });
