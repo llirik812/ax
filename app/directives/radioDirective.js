@@ -12,7 +12,7 @@ angular.module('routeApp')
 
             scope: {
                 sjFormGroupRadioScope: '=',
-                sjFormGroupRadioDisabled: '=',
+                sjFormGroupRadioDisabled: '='
             },
 
             link: function (scope, element) {
@@ -31,21 +31,16 @@ angular.module('routeApp')
                     });
                 });
 
-                var touched = false;
-
-                // workaround for iPad devices
-                labelRadio.bind('touchstart', function(){
-                    touched = true;
+                labelRadio.bind('touchstart', function(event){
+                    event.preventDefault();
+                    event.currentTarget.click();
+                    event.currentTarget.focus();
                 });
 
                 labelRadio.hover(
                     function (event) {
                         scope.$apply(function () {
                             scope.hovered = true;
-                            if (touched) {
-                                event.target.click();
-                                touched = false;
-                            }
                         });
                     }, function () {
                         scope.$apply(function () {
