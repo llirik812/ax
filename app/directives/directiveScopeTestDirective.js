@@ -26,6 +26,6 @@ angular.module('routeApp').directive('directiveScopeTest', function() {
             scope.transcludeVar = "directive value (overriden)"
         },
         transclude: true,
-        templateUrl: '/pages/directives/directiveScopeTestTemplate.html'
+        templateUrl: '/pages/directives/templates/directiveScopeTestTemplate.html'
     }
 });

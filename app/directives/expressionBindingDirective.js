@@ -12,6 +12,6 @@ angular.module('routeApp').directive('expressionBinding', function() {
 
         },
         transclude: true,
-        templateUrl: '/pages/directives/expressionDirectiveBindingTemplate.html'
+        templateUrl: '/pages/directives/templates/expressionDirectiveBindingTemplate.html'
     }
 });

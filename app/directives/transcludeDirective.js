@@ -7,7 +7,7 @@ angular.module('testApp').directive('transcludeUsage', function() {
             icon : '='
         },
         transclude: true,
-        templateUrl : '/pages/directives/transcludeDirectiveTemplate.html',
+        templateUrl : '/pages/directives/templates/transcludeDirectiveTemplate.html',
         // scope - это пространство имен контроллера директивы
         link : function(scope, element) {
             scope.nameTr = "Kirill";

@@ -5,14 +5,13 @@
     <meta name="Description" content="First AEM Site" />
     <script src="/js/jquery-1.11.2.min.js"></script>
     <script src="/js/angular.js"></script>
-    <script src="/js/angular-route.js"></script>
     <script src="/js/angular-touch.js"></script>
+    <script src="/js/angular-ui-router.min.js"></script>
     <script src="/app/filters/filters.js"></script>
     <script src="/app/modules/routeApp.js"></script>
 
     <script src="/app/controllers/route/directiveController.js"></script>
     <script src="/app/controllers/route/locationController.js"></script>
-    <script src="/app/controllers/route/routeParamsController.js"></script>
 
     <script src="/app/modules/testApp.js"></script>
     <script src="/app/controllers/testAppCtrl.js"></script>
@@ -36,15 +35,15 @@
 </head>
 
 <body ng-app="testApp" ng-controller="testAppCtrl">
+
     <div class="divs">
-        <a href="#/" style="background: red;">Root page</a>
-        <a href="#location" class="location">$location</a>
-        <a href="#routeParams/Kirill/Osokin/35" class="routeParams">Route parameters</a>
-        <a href="#directive/simple" class="directive">Use directive</a>
+        <a ui-sref="main" style="background: red;">Root page</a>
+        <a ui-sref="location" class="location">$location</a>
+        <a ui-sref="directives" class="directive">Use directive</a>
     </div>
 
     <div ng-init="initVar = 999">
-        <div ng-view></div>
+        <div ui-view></div>
     </div>
 
     <a href="/ios_test.html">переход на другую страницу</a>

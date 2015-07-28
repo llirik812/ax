@@ -32,6 +32,6 @@ angular.module('routeApp').directive('time', ['$interval', 'dateFilter', functio
     return {
         restrict : 'A',
         link : link,
-        templateUrl : '/pages/directives/timeDirectiveTemplate.html'
+        templateUrl : '/pages/directives/templates/timeDirectiveTemplate.html'
     }
 }]);

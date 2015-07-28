@@ -50,7 +50,7 @@ angular.module('routeApp').directive('draggable', function($document) {
         restrict: 'A',
         scope: {},
         transclude: true,
-        templateUrl: '/pages/directives/draggableDirectiveTemplate.html'
+        templateUrl: '/pages/directives/templates/draggableDirectiveTemplate.html'
     };
 });
 

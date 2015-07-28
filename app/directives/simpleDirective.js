@@ -3,6 +3,6 @@ angular.module('routeApp').directive('simpleDirective', function(){
 
     return {
         restrict: 'A',
-        templateUrl: '/pages/directives/simpleDirectiveTemplate.html'
+        templateUrl: '/pages/directives/templates/simpleDirectiveTemplate.html'
     }
 });

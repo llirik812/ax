@@ -6,150 +6,21 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-6 col-md-3">
-                <a class="my-directive-link" href="#directive/simple">simple</a>
-                <a class="my-directive-link" href="#directive/template_function">template_function</a>
-                <a class="my-directive-link" href="#directive/restricts">restricts</a>
-                <a class="my-directive-link" href="#directive/scope">scope</a>
-                <a class="my-directive-link" href="#directive/time">time</a>
-                <a class="my-directive-link" href="#directive/radio">radio</a>
-                <a class="my-directive-link" href="#directive/transclude">transclude</a>
-                <a class="my-directive-link" href="#directive/directive_scope_test">directive scope test</a>
-                <a class="my-directive-link" href="#directive/expression_binding">& - expression binding</a>
-                <a class="my-directive-link" href="#directive/draggable">draggable</a>
+                <a class="my-directive-link" ui-sref=".simple">simple</a>
+                <a class="my-directive-link" ui-sref=".template-function">template_function</a>
+                <a class="my-directive-link" ui-sref=".my-restricts">restricts</a>
+                <a class="my-directive-link" ui-sref=".scope">scope</a>
+                <a class="my-directive-link" ui-sref=".time">time</a>
+                <a class="my-directive-link" ui-sref=".radio-group">radio</a>
+                <a class="my-directive-link" ui-sref=".transclude-usage">transclude</a>
+                <a class="my-directive-link" ui-sref=".directive-scope-test">directive scope test</a>
+                <a class="my-directive-link" ui-sref=".expression-binding">& - expression binding</a>
+                <a class="my-directive-link" ui-sref=".draggable">draggable</a>
             </div>
 
             <!-- Directive using block -->
             <div class="col-xs-6 col-md-9" style="color: black;">
-                <div ng-switch="template">
-                    <!--Simple directive-->
-                    <div ng-switch-when="simple">
-                        <div simple-directive></div>
-                    </div>
-
-                    <div ng-switch-when="template_function">
-                        <div template-function my-attr="{{variable}}"></div>
-                    </div>
-
-                    <div ng-switch-when="restricts">
-                        <my-restricts></my-restricts>
-                        <div my-restricts></div>
-                        <div class="my-restricts"></div>
-                    </div>
-
-                    <div ng-switch-when="scope">
-                        <div scope info="me"></div>
-                        <div scope info="sister" variable="sister"></div>
-                    </div>
-
-                    <div ng-switch-when="time">
-                        <div time local="(SPB)"></div>
-                    </div>
-
-                    <div ng-switch-when="radio">
-                        <radiogroup>
-                            <div sj-form-group-radio
-                                 sj-form-group-radio-scope="genderRadio"
-                                 sj-form-group-radio-disabled="personalDetails.data.identity.ssn"
-                                 qweqwe = "personalDetails.data.identity.gender"
-                                 x = "x"
-                                 ng-click="logRadio()"
-                                 class="form-group--radio--sideways">
-                                <label for="male" style="border: 1px solid green;">
-                                    <input type="radio"
-                                           name="male"
-                                           ng-model="personalDetails.data.identity.gender"
-                                           ng-disabled="personalDetails.data.identity.ssn"
-                                           ng-click="asd($event)"
-                                           tabindex="3"
-                                           value="MALE"
-                                           id="male"
-                                           class="form-group--radio-input"/>
-                                    <strong class="form-group--radio-label form-group--radio-label--focused type--uppercase">male</strong>
-                                </label>
-                            </div>
-
-                            <div id="dfdfdf"
-                                    sj-form-group-radio
-                                 sj-form-group-radio-scope="!genderRadio"
-                                 sj-form-group-radio-disabled="personalDetails.data.identity.ssn"
-                                 qweqwe = "personalDetails.data.identity.gender"
-                                 x = "x"
-                                 ng-click="logRadio()"
-                                 class="form-group--radio--sideways">
-                                <label for="female" style="border: 1px solid green;">
-                                    <input type="radio"
-                                           name="female"
-                                           ng-model="personalDetails.data.identity.gender"
-                                           ng-disabled="personalDetails.data.identity.ssn"
-                                           ng-click="asd($event)"
-                                           tabindex="3"
-                                           value="FEMALE"
-                                           id="female"
-                                           class="form-group--radio-input"/>
-                                    <strong class="form-group--radio-label form-group--radio-label--focused type--uppercase">female</strong>
-                                </label>
-                            </div>
-                        </radiogroup>
-                        <div id="qwer"></div>
-                        <div id="qwer1"></div>
-                        <div id="qwer2"></div>
-                        <div id="qwer3"></div>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <input id="ds1" type="radio" name="asd1" value="1"><label for="ds1">1111111111111111111</label><br/>
-                        <input id="ds2" type="radio" name="asd1" value="2"><label for="ds2">22222222222222222222</label>
-
-                    </div>
-
-                    <div ng-switch-when="transclude">
-                        <div transclude-usage icon="1">
-                            <div>
-                                This is the warning message !
-                            </div>
-                            <div>
-                                {{description}}
-                            </div>
-                        </div>
-                        <div transclude-usage icon="2">
-                            <div>
-                                This is another warning message !
-                            </div>
-                            <div>
-                                {{description}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div ng-switch-when="directive_scope_test">
-                        <directive-scope-test>
-                            from body of directive. {{transcludeVar}}
-                        </directive-scope-test>
-
-                    </div>
-
-                    <div ng-switch-when="expression_binding">
-                        <div expression_binding hide-function="hideDialog(message)" is-shown="isDialogMessageShown" close-message="closeMessage">
-                            This is dialog message
-                        </div>
-                    </div>
-
-                    <div ng-switch-when="draggable">
-                        <div style="position: relative;">
-                            <div draggable>
-                                Drag me to the place you ever wanted
-                                <div>x = <span id="pozX"></span></div>
-                                <div>y = <span id="pozY"></span></div>
-                                <div>pageX = <span id="pageX"></span></div>
-                                <div>pageY = <span id="pageY"></span></div>
-                                <div>startX = <span id="startX"></span></div>
-                                <div>startY = <span id="startY"></span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div ng-switch-default>Error! No such directive ...</div>
-                </div>
+                <div ui-view></div>
             </div>
 
         </div>

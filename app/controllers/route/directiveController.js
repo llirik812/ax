@@ -1,8 +1,8 @@
-angular.module('routeApp').controller('directiveController', ['$scope', '$timeout', '$routeParams', function($scope, $timeout, $routeParams){
+angular.module('routeApp').controller('directiveController', ['$scope', '$timeout', function($scope, $timeout){
     "use strict";
 
-    $scope.template = $routeParams.name;
-    $scope.name = $routeParams.name;
+    $scope.template = '++++++++++++++ empty ++++++++++++++++';
+    $scope.name = '++++++++++++++ empty ++++++++++++++++';
 
     // Эта переменная создана для того, чтобы передать её значение
     // в директиву через атрибут с использованием префикса ng-attr-

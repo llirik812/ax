@@ -56,6 +56,6 @@ angular.module('routeApp')
 
             },
 
-            templateUrl: '/pages/directives/form-group-radio.html'
+            templateUrl: '/pages/directives/templates/form-group-radio.html'
         };
     });

@@ -1,0 +1,54 @@
+<radiogroup>
+    <div sj-form-group-radio
+         sj-form-group-radio-scope="genderRadio"
+         sj-form-group-radio-disabled="personalDetails.data.identity.ssn"
+         qweqwe = "personalDetails.data.identity.gender"
+         x = "x"
+         ng-click="logRadio()"
+         class="form-group--radio--sideways">
+        <label for="male" style="border: 1px solid green;">
+            <input type="radio"
+                   name="male"
+                   ng-model="personalDetails.data.identity.gender"
+                   ng-disabled="personalDetails.data.identity.ssn"
+                   ng-click="asd($event)"
+                   tabindex="3"
+                   value="MALE"
+                   id="male"
+                   class="form-group--radio-input"/>
+            <strong class="form-group--radio-label form-group--radio-label--focused type--uppercase">male</strong>
+        </label>
+    </div>
+
+    <div id="dfdfdf"
+         sj-form-group-radio
+         sj-form-group-radio-scope="!genderRadio"
+         sj-form-group-radio-disabled="personalDetails.data.identity.ssn"
+         qweqwe = "personalDetails.data.identity.gender"
+         x = "x"
+         ng-click="logRadio()"
+         class="form-group--radio--sideways">
+        <label for="female" style="border: 1px solid green;">
+            <input type="radio"
+                   name="female"
+                   ng-model="personalDetails.data.identity.gender"
+                   ng-disabled="personalDetails.data.identity.ssn"
+                   ng-click="asd($event)"
+                   tabindex="3"
+                   value="FEMALE"
+                   id="female"
+                   class="form-group--radio-input"/>
+            <strong class="form-group--radio-label form-group--radio-label--focused type--uppercase">female</strong>
+        </label>
+    </div>
+</radiogroup>
+<div id="qwer"></div>
+<div id="qwer1"></div>
+<div id="qwer2"></div>
+<div id="qwer3"></div>
+<br/>
+<br/>
+<br/>
+<input id="ds1" type="radio" name="asd1" value="1"><label for="ds1">1111111111111111111</label><br/>
+<input id="ds2" type="radio" name="asd1" value="2"><label for="ds2">22222222222222222222</label>
+
