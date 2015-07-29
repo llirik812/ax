@@ -1,4 +1,4 @@
-angular.module('routeApp').controller('directiveController', ['$scope', '$timeout', function($scope, $timeout){
+angular.module('routeApp').controller('directiveController', ['$scope', '$timeout', 'DIRECTIVE_STATES', function($scope, $timeout, DIRECTIVE_STATES){
     "use strict";
 
     $scope.template = '++++++++++++++ empty ++++++++++++++++';
@@ -70,5 +70,8 @@ angular.module('routeApp').controller('directiveController', ['$scope', '$timeou
         }, 1000);
     };
 
+    $scope.DIRECTIVE_STATES = DIRECTIVE_STATES;
+
     $scope.isDialogMessageShown = true;
+
 }]);
