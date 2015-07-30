@@ -69,8 +69,20 @@ angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STAT
         }).state(DIRECTIVE_STATES.SIMPLE, {
             parent : STATES.DIRECTIVES,
             url : '/directives/simple',
-            templateUrl : '/pages/directives/views/simpleView.html',
-            controller : 'directiveController'
+            views : {
+                '' : {
+                    templateUrl : '/pages/directives/views/simpleView.html',
+                    controller : 'directiveController'
+                },
+                'viewA' : {
+                    templateUrl : '/pages/directives/views/simple/viewA.html',
+                    controller : 'directiveController'
+                },
+                'viewB' : {
+                    templateUrl : '/pages/directives/views/simple/viewB.html',
+                    controller : 'directiveController'
+                }
+            }
         }).state(DIRECTIVE_STATES.TEMPLATE_FUNCTION, {
             parent : STATES.DIRECTIVES,
             url : '/directives/templateFunction',

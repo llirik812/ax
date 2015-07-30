@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-6 col-md-3">
-                <a class="my-directive-link" ui-sref="{{DIRECTIVE_STATES.SIMPLE}}">simple</a>
+                <a class="my-directive-link" ui-sref="{{DIRECTIVE_STATES.SIMPLE}}">simple & Named view</a>
                 <a class="my-directive-link" ui-sref="{{DIRECTIVE_STATES.TEMPLATE_FUNCTION}}">template_function</a>
                 <a class="my-directive-link" ui-sref="{{DIRECTIVE_STATES.MY_RESTRICTS}}">restricts</a>
                 <a class="my-directive-link" ui-sref="{{DIRECTIVE_STATES.SCOPE}}">scope</a>
@@ -20,6 +20,8 @@
 
             <!-- Directive using block -->
             <div class="col-xs-6 col-md-9" style="color: black;">
+                <div ui-view="viewA"></div>
+                <div ui-view="viewB"></div>
                 <div ui-view></div>
             </div>
 
