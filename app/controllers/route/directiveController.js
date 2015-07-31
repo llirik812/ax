@@ -74,4 +74,8 @@ angular.module('routeApp').controller('directiveController', ['$scope', '$timeou
 
     $scope.isDialogMessageShown = true;
 
+    ////////////////////////////// max length ///////////////////////////////
+
+    $scope.inputValue = '';
+
 }]);

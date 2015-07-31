@@ -14,7 +14,8 @@ angular.module('routeApp').constant('STATES', {
     TEMPLATE_FUNCTION : 'templateFunction',
     TRANSCLUDE_USAGE : 'transclude_usage',
     TIME : 'time',
-    SCOPE : 'scope'
+    SCOPE : 'scope',
+    MAX_LENGTH : 'maxLength'
 });
 
 angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STATES', 'DIRECTIVE_STATES', function($stateProvider, $urlRouterProvider, STATES, DIRECTIVE_STATES){
@@ -36,7 +37,12 @@ angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STAT
         templateUrl : '/pages/directivePage.html',
         controller : 'directiveController'
     })
-        .state(DIRECTIVE_STATES.DIRECTIVE_SCOPE_TEST, {
+        .state(DIRECTIVE_STATES.MAX_LENGTH, {
+            parent : STATES.DIRECTIVES,
+            url : '/directives/inputMaxLength',
+            templateUrl : '/pages/directives/views/maxLengthView.html',
+            controller : 'directiveController'
+        }).state(DIRECTIVE_STATES.DIRECTIVE_SCOPE_TEST, {
             parent : STATES.DIRECTIVES,
             url : '/directives/directiveScopeTest',
             templateUrl : '/pages/directives/views/directiveScopeTestView.html',
