@@ -77,5 +77,6 @@ angular.module('routeApp').controller('directiveController', ['$scope', '$timeou
     ////////////////////////////// max length ///////////////////////////////
 
     $scope.inputValue = '';
+    $scope.maxLength = 10;
 
 }]);

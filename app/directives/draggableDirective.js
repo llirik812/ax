@@ -25,6 +25,9 @@ angular.module('routeApp').directive('draggable', function($document) {
                 startY = event.pageY - y;
                 $document.on('mousemove', mousemove);
                 $document.on('mouseup', mouseup);
+                element.css({
+                    opacity: '0.8'
+                });
             });
 
             function mousemove(event) {
@@ -45,6 +48,9 @@ angular.module('routeApp').directive('draggable', function($document) {
             function mouseup() {
                 $document.off('mousemove', mousemove);
                 $document.off('mouseup', mouseup);
+                element.css({
+                    opacity: '1'
+                });
             }
         },
         restrict: 'A',

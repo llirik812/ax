@@ -2,8 +2,6 @@ angular.module('routeApp').directive('sjMaxLength', function() {
     return {
         restrict : 'A',
         link : function(scope, element, attrs) {
-            var oldValue = scope[attrs.ngModel];
-
             element.bind('keydown', function(event) {
                 if ((scope[attrs.ngModel].length >= attrs.sjMaxLength) &&
                     (!_.contains([46, 8, 9, 27, 13], event.keyCode) &&
@@ -27,7 +25,6 @@ angular.module('routeApp').directive('sjMaxLength', function() {
                 if (newValue.length > attrs.sjMaxLength) {
                     scope[attrs.ngModel] = scope[attrs.ngModel].substr(0, attrs.sjMaxLength);
                 }
-                oldValue = scope[attrs.ngModel];
             });
         }
     }
