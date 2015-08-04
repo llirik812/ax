@@ -41,68 +41,68 @@ angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STAT
             parent : STATES.DIRECTIVES,
             url : '/directives/inputMaxLength',
             templateUrl : '/pages/directives/views/maxLengthView.html',
-            controller : 'directiveController'
+            controller : 'maxLengthDirectiveCtrl'
         }).state(DIRECTIVE_STATES.DIRECTIVE_SCOPE_TEST, {
             parent : STATES.DIRECTIVES,
             url : '/directives/directiveScopeTest',
             templateUrl : '/pages/directives/views/directiveScopeTestView.html',
-            controller : 'directiveController'
+            controller : 'directiveScopeTestDirectiveCtrl'
         }).state(DIRECTIVE_STATES.DRAGGABLE, {
             parent : STATES.DIRECTIVES,
             url : '/directives/draggable',
             templateUrl : '/pages/directives/views/draggableView.html',
-            controller : 'directiveController'
+            controller : 'draggableDirectiveCtrl'
         }).state(DIRECTIVE_STATES.EXPRESSION_BINDING, {
             parent : STATES.DIRECTIVES,
             url : '/directives/expressionBinding',
             templateUrl : '/pages/directives/views/expressionBindingView.html',
-            controller : 'directiveController'
+            controller : 'expressionBindingDirectiveCtrl'
         }).state(DIRECTIVE_STATES.MY_RESTRICTS, {
             parent : STATES.DIRECTIVES,
             url : '/directives/myRestricts',
             templateUrl : '/pages/directives/views/myRestrictsView.html',
-            controller : 'directiveController'
+            controller : 'restrictsDirectiveCtrl'
         }).state(DIRECTIVE_STATES.RADIO_GROUP, {
             parent : STATES.DIRECTIVES,
             url : '/directives/radioGroup',
             templateUrl : '/pages/directives/views/radioGroupView.html',
-            controller : 'directiveController'
+            controller : 'radioDirectiveCtrl'
         }).state(DIRECTIVE_STATES.SCOPE, {
             parent : STATES.DIRECTIVES,
             url : '/directives/scope',
             templateUrl : '/pages/directives/views/scopeView.html',
-            controller : 'directiveController'
+            controller : 'scopeDirectiveCtrl'
         }).state(DIRECTIVE_STATES.SIMPLE, {
             parent : STATES.DIRECTIVES,
             url : '/directives/simple',
             views : {
                 '' : {
                     templateUrl : '/pages/directives/views/simpleView.html',
-                    controller : 'directiveController'
+                    controller : 'simpleNamedViewDirectiveCtrl'
                 },
                 'viewA' : {
                     templateUrl : '/pages/directives/views/simple/viewA.html',
-                    controller : 'directiveController'
+                    controller : 'simpleNamedViewDirectiveCtrl'
                 },
                 'viewB' : {
                     templateUrl : '/pages/directives/views/simple/viewB.html',
-                    controller : 'directiveController'
+                    controller : 'simpleNamedViewDirectiveCtrl'
                 }
             }
         }).state(DIRECTIVE_STATES.TEMPLATE_FUNCTION, {
             parent : STATES.DIRECTIVES,
             url : '/directives/templateFunction',
             templateUrl : '/pages/directives/views/templateFunctionView.html',
-            controller : 'directiveController'
+            controller : 'templateFunctionDirectiveCtrl'
         }).state(DIRECTIVE_STATES.TRANSCLUDE_USAGE, {
             parent : STATES.DIRECTIVES,
             url : '/directives/transcludeUsage',
             templateUrl : '/pages/directives/views/transcludeUsageView.html',
-            controller : 'directiveController'
+            controller : 'transcludeUsageDirectiveCtrl'
         }).state(DIRECTIVE_STATES.TIME, {
             parent : STATES.DIRECTIVES,
             url : '/directives/time',
             templateUrl : '/pages/directives/views/timeView.html',
-            controller : 'directiveController'
+            controller : 'timeDirectiveCtrl'
         });
 }]);
