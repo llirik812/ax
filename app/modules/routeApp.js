@@ -102,7 +102,6 @@ angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STAT
         }).state(DIRECTIVE_STATES.TIME, {
             parent : STATES.DIRECTIVES,
             url : '/directives/time',
-            templateUrl : '/pages/directives/views/timeView.html',
-            controller : 'timeDirectiveCtrl'
+            templateUrl : '/pages/directives/views/timeView.html'
         });
 }]);

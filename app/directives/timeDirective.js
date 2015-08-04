@@ -32,6 +32,17 @@ angular.module('routeApp').directive('time', ['$interval', 'dateFilter', functio
     return {
         restrict : 'A',
         link : link,
-        templateUrl : '/pages/directives/templates/timeDirectiveTemplate.html'
+        templateUrl : '/pages/directives/templates/timeDirectiveTemplate.html',
+        controller : ['$scope', function($scope){
+            "use strict";
+
+            // Данные переменные мы будем использовать для для директивы отображающей время
+            $scope.timeString = 'Current time is ';
+            $scope.format = 'M/d/yy h:mm:ss a';
+
+            $scope.destroy = function(){
+                $element.find()
+            };
+        }]
     }
 }]);
