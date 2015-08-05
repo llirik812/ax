@@ -15,7 +15,8 @@ angular.module('routeApp').constant('STATES', {
     TRANSCLUDE_USAGE : 'transclude_usage',
     TIME : 'time',
     SCOPE : 'scope',
-    MAX_LENGTH : 'maxLength'
+    MAX_LENGTH : 'maxLength',
+    REQUIRE_TEST : 'require_test'
 });
 
 angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STATES', 'DIRECTIVE_STATES', function($stateProvider, $urlRouterProvider, STATES, DIRECTIVE_STATES){
@@ -103,5 +104,9 @@ angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STAT
             parent : STATES.DIRECTIVES,
             url : '/directives/time',
             templateUrl : '/pages/directives/views/timeView.html'
+        }).state(DIRECTIVE_STATES.REQUIRE_TEST, {
+            parent : STATES.DIRECTIVES,
+            url : '/directives/requireTest',
+            templateUrl : '/pages/directives/views/requireTestView.html'
         });
 }]);

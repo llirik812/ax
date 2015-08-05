@@ -1,0 +1,12 @@
+<require-test>
+    <div style="display: block; height: 100px; background: greenyellow;">
+        {{CONTROLLER_VAR_INSIDE_DIRECTIVE}}
+    </div>
+    <!--насколько я понимаю, инжектить контроллер родительской
+    директивы в дочернюю можно только, в случае если эта директива
+    вложена в родительскую как здесь. Если поместить <do-require-test>
+    вне <require-test>, тогда будет выозвращено исключение о неудаче
+    поиска контроллера -->
+    <do-require-test></do-require-test>
+</require-test>
+
