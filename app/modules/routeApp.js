@@ -16,7 +16,8 @@ angular.module('routeApp').constant('STATES', {
     TIME : 'time',
     SCOPE : 'scope',
     MAX_LENGTH : 'maxLength',
-    REQUIRE_TEST : 'require_test'
+    REQUIRE_TEST : 'require_test',
+    NG_MODEL_CTRL : 'ng_model_ctrl'
 });
 
 angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STATES', 'DIRECTIVE_STATES', function($stateProvider, $urlRouterProvider, STATES, DIRECTIVE_STATES){
@@ -108,5 +109,9 @@ angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STAT
             parent : STATES.DIRECTIVES,
             url : '/directives/requireTest',
             templateUrl : '/pages/directives/views/requireTestView.html'
+        }).state(DIRECTIVE_STATES.NG_MODEL_CTRL, {
+            parent : STATES.DIRECTIVES,
+            url : '/directives/ngModelCtrl',
+            templateUrl : '/pages/directives/views/ngModelCtrlView.html'
         });
 }]);
