@@ -194,19 +194,22 @@ describe("Testing spies ...", function() {
 describe("Another tracking properties", function() {
     "use strict";
 
-    var value = null;
+    var value = null, obj;
 
-    var obj = {
-        setValue : function(val) {
-            value = val;
-            alert("Another tracking properties: setValue called - " + val);
-        },
-        getValue : function() {
-            return value;
-        }
-    };
+    beforeEach(function(){
+        obj = {
+            setValue : function(val) {
+                value = val;
+                alert("Another tracking properties: setValue called - " + val);
+            },
+            getValue : function() {
+                return value;
+            }
+        };
+    });
 
     it("using 'calls' track property", function() {
+        // .and.callThrough() - вызываем ф-цию по настоящему
         spyOn(obj, "setValue").and.callThrough();
         obj.setValue(2);
         obj.setValue(100);
@@ -242,7 +245,9 @@ describe("Another tracking properties", function() {
          *     {object : { setValue : spy on setValue, getValue : Function }, args : [ 23 ] }
          * ]
          */
-        expect(obj.setValue.calls.all()).toEqual([{object: obj, args: [123]}, {object: obj, args: [23]}]);
+        var calls = obj.setValue.calls.all();
+        expect(calls[0].args).toEqual([123]);
+        expect(calls[1].args).toEqual([23]);
     });
 
     it('using mostRecent() function', function() {
@@ -252,7 +257,7 @@ describe("Another tracking properties", function() {
         /**
          * mostRecent() - возвращает последний вызов ф-ции
          */
-        expect(obj.setValue.calls.mostRecent()).toEqual({object: obj, args: [456]});
+        expect(obj.setValue.calls.mostRecent().args).toEqual([456]);
     });
 
     it('using first() function', function() {
@@ -262,7 +267,7 @@ describe("Another tracking properties", function() {
         /**
          * first() - то же что и предыдущее только для первого вызова
          */
-        expect(obj.setValue.calls.first()).toEqual({object: obj, args: [123]});
+        expect(obj.setValue.calls.first().args).toEqual([123]);
     });
 
     it('can be reset', function() {

@@ -3,7 +3,7 @@ angular.module('routeApp').directive('modelControllerTest', [function() {
         restrict : 'E',
         link : function(scope, elem, attr) {
             scope.$watch(attr.ngModel, function() {
-                alert(1);
+                console.log("model changed");
             });
         },
         controller : ['$scope', function($scope) {

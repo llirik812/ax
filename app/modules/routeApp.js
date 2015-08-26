@@ -17,7 +17,8 @@ angular.module('routeApp').constant('STATES', {
     SCOPE : 'scope',
     MAX_LENGTH : 'maxLength',
     REQUIRE_TEST : 'require_test',
-    NG_MODEL_CTRL : 'ng_model_ctrl'
+    NG_MODEL_CTRL : 'ng_model_ctrl',
+    SSN_VALIDATION : 'ssn_calidation'
 });
 
 angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STATES', 'DIRECTIVE_STATES', function($stateProvider, $urlRouterProvider, STATES, DIRECTIVE_STATES){
@@ -113,5 +114,10 @@ angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STAT
             parent : STATES.DIRECTIVES,
             url : '/directives/ngModelCtrl',
             templateUrl : '/pages/directives/views/ngModelCtrlView.html'
+        }).state(DIRECTIVE_STATES.SSN_VALIDATION, {
+            parent : STATES.DIRECTIVES,
+            url : '/directives/ssnValidation',
+            controller : 'ssnValidationDirectiveCtrl',
+            templateUrl : '/pages/directives/views/ssnValidationView.html'
         });
 }]);
