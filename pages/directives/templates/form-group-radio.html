@@ -10,5 +10,18 @@
         </svg>
     </div>
     <div ng-transclude></div>
+
+    <textarea sj-highlight-on-focus
+              sj-watch-focus
+              id="invoiceAddress"
+              name="invoiceAddress"
+              ng-model="agreementModel.invoiceAddress"
+              maxlength="255"
+              rows="5"
+              class="form-group--textarea col-xs-12 guttered--horizontally"
+              tabindex="8"
+              required>
+    </textarea>
+
 </div>
 
