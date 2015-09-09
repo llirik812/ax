@@ -2,3 +2,5 @@
 node_modules
 /.project
 *.iml
+/notes.ctd*
+notes.ctd
