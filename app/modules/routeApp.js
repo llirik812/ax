@@ -18,7 +18,8 @@ angular.module('routeApp').constant('STATES', {
     MAX_LENGTH : 'maxLength',
     REQUIRE_TEST : 'require_test',
     NG_MODEL_CTRL : 'ng_model_ctrl',
-    SSN_VALIDATION : 'ssn_calidation'
+    SSN_VALIDATION : 'ssn_validation',
+    LEAVE_PAGE_MODAL : 'leave_page_modal'
 });
 
 angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STATES', 'DIRECTIVE_STATES', function($stateProvider, $urlRouterProvider, STATES, DIRECTIVE_STATES){
@@ -119,5 +120,10 @@ angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STAT
             url : '/directives/ssnValidation',
             controller : 'ssnValidationDirectiveCtrl',
             templateUrl : '/pages/directives/views/ssnValidationView.html'
+        }).state(DIRECTIVE_STATES.LEAVE_PAGE_MODAL, {
+            parent : STATES.DIRECTIVES,
+            url : '/directives/leavePageModal',
+            controller : 'leavePageModalDirectiveCtrl',
+            templateUrl : '/pages/directives/views/leavePageModalView.html'
         });
 }]);
