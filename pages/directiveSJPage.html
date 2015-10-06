@@ -1,0 +1,21 @@
+<div class="directiveSJ page">
+    <div style="margin-bottom: 20px;">
+        <b class="word">SJ tests</b>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6 col-md-3">
+                <a class="my-directive-sj-link" ui-sref="{{DIRECTIVE_STATES.RADIO_GROUP}}">radio</a>
+                <a class="my-directive-sj-link" ui-sref="{{DIRECTIVE_STATES.MAX_LENGTH}}">max length</a>
+                <a class="my-directive-sj-link" ui-sref="{{DIRECTIVE_STATES.SSN_VALIDATION}}">ssn validation tests</a>
+                <a class="my-directive-sj-link" ui-sref="{{DIRECTIVE_STATES.LEAVE_PAGE_MODAL}}">leave page directive</a>
+            </div>
+            <!-- Directive using block -->
+            <div class="col-xs-6 col-md-9" style="color: black;">
+                <div ui-view></div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -3,7 +3,8 @@ angular.module('routeApp', ['ui.router']);
 angular.module('routeApp').constant('STATES', {
     ROOT : 'root',
     LOCATION : 'location',
-    DIRECTIVES : 'directives'
+    DIRECTIVES : 'directives',
+    DIRECTIVES_SJ : 'directives-sj-tests'
 }).constant('DIRECTIVE_STATES', {
     SIMPLE : 'simple',
     DIRECTIVE_SCOPE_TEST : 'directive-scope-test',
@@ -41,12 +42,8 @@ angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STAT
         templateUrl : '/pages/directivePage.html',
         controller : 'directiveController'
     })
-        .state(DIRECTIVE_STATES.MAX_LENGTH, {
-            parent : STATES.DIRECTIVES,
-            url : '/directives/inputMaxLength',
-            templateUrl : '/pages/directives/views/maxLengthView.html',
-            controller : 'maxLengthDirectiveCtrl'
-        }).state(DIRECTIVE_STATES.DIRECTIVE_SCOPE_TEST, {
+        // Directives for angular experiments
+        .state(DIRECTIVE_STATES.DIRECTIVE_SCOPE_TEST, {
             parent : STATES.DIRECTIVES,
             url : '/directives/directiveScopeTest',
             templateUrl : '/pages/directives/views/directiveScopeTestView.html',
@@ -66,11 +63,6 @@ angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STAT
             url : '/directives/myRestricts',
             templateUrl : '/pages/directives/views/myRestrictsView.html',
             controller : 'restrictsDirectiveCtrl'
-        }).state(DIRECTIVE_STATES.RADIO_GROUP, {
-            parent : STATES.DIRECTIVES,
-            url : '/directives/radioGroup',
-            templateUrl : '/pages/directives/views/radioGroupView.html',
-            controller : 'radioDirectiveCtrl'
         }).state(DIRECTIVE_STATES.SCOPE, {
             parent : STATES.DIRECTIVES,
             url : '/directives/scope',
@@ -115,15 +107,32 @@ angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STAT
             parent : STATES.DIRECTIVES,
             url : '/directives/ngModelCtrl',
             templateUrl : '/pages/directives/views/ngModelCtrlView.html'
-        }).state(DIRECTIVE_STATES.SSN_VALIDATION, {
-            parent : STATES.DIRECTIVES,
-            url : '/directives/ssnValidation',
-            controller : 'ssnValidationDirectiveCtrl',
-            templateUrl : '/pages/directives/views/ssnValidationView.html'
-        }).state(DIRECTIVE_STATES.LEAVE_PAGE_MODAL, {
-            parent : STATES.DIRECTIVES,
+        }).
+    // Directive for SJ testing
+    state(STATES.DIRECTIVES_SJ, {
+        url : '/directives_sj',
+        templateUrl : '/pages/directiveSJPage.html',
+        controller : 'directiveSJController'
+    })
+        .state(DIRECTIVE_STATES.LEAVE_PAGE_MODAL, {
+            parent : STATES.DIRECTIVES_SJ,
             url : '/directives/leavePageModal',
             controller : 'leavePageModalDirectiveCtrl',
             templateUrl : '/pages/directives/views/leavePageModalView.html'
+        }).state(DIRECTIVE_STATES.SSN_VALIDATION, {
+            parent : STATES.DIRECTIVES_SJ,
+            url : '/directives/ssnValidation',
+            controller : 'ssnValidationDirectiveCtrl',
+            templateUrl : '/pages/directives/views/ssnValidationView.html'
+        }).state(DIRECTIVE_STATES.RADIO_GROUP, {
+            parent : STATES.DIRECTIVES_SJ,
+            url : '/directives/radioGroup',
+            templateUrl : '/pages/directives/views/radioGroupView.html',
+            controller : 'radioDirectiveCtrl'
+        }).state(DIRECTIVE_STATES.MAX_LENGTH, {
+            parent : STATES.DIRECTIVES_SJ,
+            url : '/directives/inputMaxLength',
+            templateUrl : '/pages/directives/views/maxLengthView.html',
+            controller : 'maxLengthDirectiveCtrl'
         });
 }]);

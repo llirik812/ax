@@ -18,6 +18,10 @@
     background: rgba(255, 215, 0, 0.25);
     color: white;
 }
+.directiveSJ {
+    background: #EDFCED;
+    color: white;
+}
 .routeParams {
     background: #F3F5F7;
     color: black;
@@ -32,16 +36,23 @@
 .page .word {
     font-size: 30px;
 }
-.my-directive-link {
+.my-directive-link,
+.my-directive-sj-link{
     display: block;
     margin: 5px;
-    background: #47ff5e;
     width: 200px;
     padding: 4px 10px;
     text-decoration: none;
     font-weight: bold;
 }
-.my-directive-link:hover {
+.my-directive-link {
+    background: #47ff5e;
+}
+.my-directive-sj-link {
+    background: #55AAFF;
+}
+.my-directive-link:hover,
+.my-directive-sj-link:hover{
     text-decoration: none;
     background: red;
 }
