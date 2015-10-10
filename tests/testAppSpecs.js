@@ -6,7 +6,6 @@ describe("TestAppCtrl", function(){
     beforeEach(module('testApp'));
 
     beforeEach(inject(function($controller){
-        scope = {};
         ctrl = $controller('testAppCtrl', {$scope : scope});
     }));
 

@@ -4,7 +4,8 @@ angular.module('routeApp').constant('STATES', {
     ROOT : 'root',
     LOCATION : 'location',
     DIRECTIVES : 'directives',
-    DIRECTIVES_SJ : 'directives-sj-tests'
+    DIRECTIVES_SJ : 'directives-sj-tests',
+    KARMA : 'karma'
 }).constant('DIRECTIVE_STATES', {
     SIMPLE : 'simple',
     DIRECTIVE_SCOPE_TEST : 'directive-scope-test',
@@ -112,7 +113,7 @@ angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STAT
     state(STATES.DIRECTIVES_SJ, {
         url : '/directives_sj',
         templateUrl : '/pages/directiveSJPage.html',
-        controller : 'directiveSJController'
+        controller : 'directiveSJCtrl'
     })
         .state(DIRECTIVE_STATES.LEAVE_PAGE_MODAL, {
             parent : STATES.DIRECTIVES_SJ,
@@ -134,5 +135,11 @@ angular.module('routeApp').config(['$stateProvider', '$urlRouterProvider', 'STAT
             url : '/directives/inputMaxLength',
             templateUrl : '/pages/directives/views/maxLengthView.html',
             controller : 'maxLengthDirectiveCtrl'
+        }).
+        // Directive for SJ testing
+        state(STATES.KARMA, {
+            url : '/karma',
+            templateUrl : '/pages/karmaPage.html',
+            controller : 'karmaCtrl'
         });
 }]);

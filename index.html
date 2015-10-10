@@ -8,11 +8,17 @@
     <script src="/js/angular.js"></script>
     <script src="/js/angular-touch.js"></script>
     <script src="/js/angular-ui-router.min.js"></script>
-    <script src="/app/filters/filters.js"></script>
+
     <script src="/app/modules/routeApp.js"></script>
+    <script src="/app/modules/testApp.js"></script>
+
+    <script src="/app/filters/filters.js"></script>
 
     <script src="/app/controllers/route/directiveController.js"></script>
     <script src="/app/controllers/route/directiveSJController.js"></script>
+    <script src="/app/controllers/route/karmaController.js"></script>
+    <script src="/app/controllers/route/locationController.js"></script>
+
     <script src="/app/controllers/route/directives/directiveScopeTestDirectiveCtrl.js"></script>
     <script src="/app/controllers/route/directives/draggableDirectiveCtrl.js"></script>
     <script src="/app/controllers/route/directives/expressionBindingDirectiveCtrl.js"></script>
@@ -26,9 +32,6 @@
     <script src="/app/controllers/route/directives/ssnValidationDirectiveCtrl.js"></script>
     <script src="/app/controllers/route/directives/leavePageModalDirectiveCtrl.js"></script>
 
-    <script src="/app/controllers/route/locationController.js"></script>
-
-    <script src="/app/modules/testApp.js"></script>
     <script src="/app/controllers/testAppCtrl.js"></script>
     <script src="/app/controllers/anotherController.js"></script>
 
@@ -61,6 +64,7 @@
         <a ui-sref="location" class="location">$location</a>
         <a ui-sref="directives" class="directive">Use directive</a>
         <a ui-sref="directives-sj-tests" class="directiveSJ">JS directive tests</a>
+        <a ui-sref="karma" class="karma">Unit testing</a>
     </div>
 
     <div ng-init="initVar = 999">
