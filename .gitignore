@@ -2,9 +2,10 @@
 node_modules
 /.project
 *.iml
-notes.ctd~
-notes.ctd~~
-notes.ctd~~~
 data.ctz~
 data.ctz~~
 data.ctz~~~
+notes.ctz
+notes.ctz~
+notes.ctz~~
+notes.ctz~~~
